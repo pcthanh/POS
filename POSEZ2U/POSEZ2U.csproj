@@ -1,0 +1,1536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{448E9EE7-F95D-4397-8ECF-D576DAB79191}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POSEZ2U</RootNamespace>
+    <AssemblyName>POSEZ2U</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_9yx_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\CheckFormShowing.cs" />
+    <Compile Include="Class\ClassFonts.cs" />
+    <Compile Include="Class\ExportExcelToDataTable.cs" />
+    <Compile Include="Class\IniFile.cs" />
+    <Compile Include="Class\KeyValueModel.cs" />
+    <Compile Include="Class\MenuGroup.cs" />
+    <Compile Include="Class\MoneyFortmat.cs" />
+    <Compile Include="Class\Order.cs" />
+    <Compile Include="Class\ProgramType.cs" />
+    <Compile Include="Class\RawPrinterHelper.cs" />
+    <Compile Include="Class\UserLoginModel.cs" />
+    <Compile Include="Class\WinAPI.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAccountDebit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccountDebit.Designer.cs">
+      <DependentUpon>frmAccountDebit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddNewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNewCustomer.Designer.cs">
+      <DependentUpon>frmAddNewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPrinter.Designer.cs">
+      <DependentUpon>frmAddPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSeat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSeat.Designer.cs">
+      <DependentUpon>frmAddSeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgainShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgainShift.Designer.cs">
+      <DependentUpon>frmAgainShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBackupData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBackupData.Designer.cs">
+      <DependentUpon>frmBackupData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCashOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCashOut.Designer.cs">
+      <DependentUpon>frmCashOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePrice.Designer.cs">
+      <DependentUpon>frmChangePrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChooseCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChooseCard.Designer.cs">
+      <DependentUpon>frmChooseCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChooseeTableJoin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChooseeTableJoin.Designer.cs">
+      <DependentUpon>frmChooseeTableJoin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfirm.Designer.cs">
+      <DependentUpon>frmConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDailogExit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDailogExit.Designer.cs">
+      <DependentUpon>frmDailogExit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatabaseSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatabaseSetting.designer.cs">
+      <DependentUpon>frmDatabaseSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiscount.Designer.cs">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditProductPriceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditProductPriceList.Designer.cs">
+      <DependentUpon>frmEditProductPriceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEndShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEndShift.Designer.cs">
+      <DependentUpon>frmEndShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFloor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFloor.Designer.cs">
+      <DependentUpon>frmFloor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGroupAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGroupAdd.Designer.cs">
+      <DependentUpon>frmGroupAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistoryAccPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistoryAccPayment.Designer.cs">
+      <DependentUpon>frmHistoryAccPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmJoinTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJoinTable.Designer.cs">
+      <DependentUpon>frmJoinTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKeyBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKeyBoard.Designer.cs">
+      <DependentUpon>frmKeyBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKeyPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKeyPad.Designer.cs">
+      <DependentUpon>frmKeyPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKeyPadTransferTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKeyPadTransferTable.Designer.cs">
+      <DependentUpon>frmKeyPadTransferTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKillPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKillPos.Designer.cs">
+      <DependentUpon>frmKillPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuAdd.Designer.cs">
+      <DependentUpon>frmMenuAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuAddItemList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuAddItemList.designer.cs">
+      <DependentUpon>frmMenuAddItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuSetting.Designer.cs">
+      <DependentUpon>frmMenuSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessager .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessager .Designer.cs">
+      <DependentUpon>frmMessager .cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewShift.Designer.cs">
+      <DependentUpon>frmNewShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNote.Designer.cs">
+      <DependentUpon>frmNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpacity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpacity.Designer.cs">
+      <DependentUpon>frmOpacity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpenItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpenItem.Designer.cs">
+      <DependentUpon>frmOpenItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPayMent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayMent.Designer.cs">
+      <DependentUpon>frmPayMent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentAcc.Designer.cs">
+      <DependentUpon>frmPaymentAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentCard.Designer.cs">
+      <DependentUpon>frmPaymentCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentCash.Designer.cs">
+      <DependentUpon>frmPaymentCash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrevOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrevOrder.Designer.cs">
+      <DependentUpon>frmPrevOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrinterSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrinterSetting.Designer.cs">
+      <DependentUpon>frmPrinterSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcessing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcessing.Designer.cs">
+      <DependentUpon>frmProcessing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoleAdd.Designer.cs">
+      <DependentUpon>frmRoleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeat.Designer.cs">
+      <DependentUpon>frmSeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSecondDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSecondDisplay.Designer.cs">
+      <DependentUpon>frmSecondDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettingAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingAll.Designer.cs">
+      <DependentUpon>frmSettingAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettingPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettingPrint.Designer.cs">
+      <DependentUpon>frmSettingPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShift.Designer.cs">
+      <DependentUpon>frmShift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTakeAway.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTakeAway.Designer.cs">
+      <DependentUpon>frmTakeAway.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTKAOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTKAOrder.Designer.cs">
+      <DependentUpon>frmTKAOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTool.Designer.cs">
+      <DependentUpon>frmTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTranComplete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTranComplete.Designer.cs">
+      <DependentUpon>frmTranComplete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransferTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransferTable.Designer.cs">
+      <DependentUpon>frmTransferTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUserSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserSetting.Designer.cs">
+      <DependentUpon>frmUserSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC\ImageViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UC\ImageViewer.Designer.cs">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCAccount.Designer.cs">
+      <DependentUpon>UCAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCAccPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCAccPayment.Designer.cs">
+      <DependentUpon>UCAccPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCAddseat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCAddseat.Designer.cs">
+      <DependentUpon>UCAddseat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCBackupItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCBackupItem.Designer.cs">
+      <DependentUpon>UCBackupItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCBtnPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCBtnPayment.Designer.cs">
+      <DependentUpon>UCBtnPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCbtnPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCbtnPrinter.Designer.cs">
+      <DependentUpon>UCbtnPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCCancelOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCCancelOrder.Designer.cs">
+      <DependentUpon>UCCancelOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCCashOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCCashOut.Designer.cs">
+      <DependentUpon>UCCashOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCCategoryPrint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCCategoryPrint.Designer.cs">
+      <DependentUpon>UCCategoryPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCCustomerItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCCustomerItem.Designer.cs">
+      <DependentUpon>UCCustomerItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCCustomerTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCCustomerTitle.Designer.cs">
+      <DependentUpon>UCCustomerTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCDailySaleQTYReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCDailySaleQTYReport.Designer.cs">
+      <DependentUpon>UCDailySaleQTYReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCDailySaleSumaryReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCDailySaleSumaryReport.Designer.cs">
+      <DependentUpon>UCDailySaleSumaryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCDatabase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCDatabase.Designer.cs">
+      <DependentUpon>UCDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCDeparmentDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCDeparmentDetail.Designer.cs">
+      <DependentUpon>UCDeparmentDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCDepartmentListDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCDepartmentListDetail.Designer.cs">
+      <DependentUpon>UCDepartmentListDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCDiscount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCDiscount.Designer.cs">
+      <DependentUpon>UCDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCFileBackupTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCFileBackupTitle.Designer.cs">
+      <DependentUpon>UCFileBackupTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCFloorPlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCFloorPlan.Designer.cs">
+      <DependentUpon>UCFloorPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCHistoryAccPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCHistoryAccPayment.Designer.cs">
+      <DependentUpon>UCHistoryAccPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCInventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCInventory.Designer.cs">
+      <DependentUpon>UCInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCItemModifierOfMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCItemModifierOfMenu.Designer.cs">
+      <DependentUpon>UCItemModifierOfMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCAllPayMent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCAllPayMent.Designer.cs">
+      <DependentUpon>UCAllPayMent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCGroup.Designer.cs">
+      <DependentUpon>UCGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCGroupList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCGroupList.Designer.cs">
+      <DependentUpon>UCGroupList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCGroupListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCGroupListItem.Designer.cs">
+      <DependentUpon>UCGroupListItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCGroupMenuOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCGroupMenuOrder.Designer.cs">
+      <DependentUpon>UCGroupMenuOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCInfoTop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCInfoTop.Designer.cs">
+      <DependentUpon>UCInfoTop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCItem.Designer.cs">
+      <DependentUpon>UCItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCItemList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCItemList.Designer.cs">
+      <DependentUpon>UCItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCItemListButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCItemListButton.Designer.cs">
+      <DependentUpon>UCItemListButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCItemOfCategoryPrint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCItemOfCategoryPrint.Designer.cs">
+      <DependentUpon>UCItemOfCategoryPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCItemReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCItemReport.Designer.cs">
+      <DependentUpon>UCItemReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCKeypad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCKeypad.Designer.cs">
+      <DependentUpon>UCKeypad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCKeyPadOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCKeyPadOrder.Designer.cs">
+      <DependentUpon>UCKeyPadOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCMenu.Designer.cs">
+      <DependentUpon>UCMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCMenuAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCMenuAdd.Designer.cs">
+      <DependentUpon>UCMenuAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCMenuList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCMenuList.Designer.cs">
+      <DependentUpon>UCMenuList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCMenuOfGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCMenuOfGroup.Designer.cs">
+      <DependentUpon>UCMenuOfGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCMenuOrdercs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCMenuOrdercs.Designer.cs">
+      <DependentUpon>UCMenuOrdercs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCModifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCModifier.Designer.cs">
+      <DependentUpon>UCModifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCModifierItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCModifierItem.Designer.cs">
+      <DependentUpon>UCModifierItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCModifierOfMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCModifierOfMenu.Designer.cs">
+      <DependentUpon>UCModifierOfMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCNote.Designer.cs">
+      <DependentUpon>UCNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCOpenItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCOpenItem.Designer.cs">
+      <DependentUpon>UCOpenItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCOpenTill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCOpenTill.Designer.cs">
+      <DependentUpon>UCOpenTill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCOrder.Designer.cs">
+      <DependentUpon>UCOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPayment.Designer.cs">
+      <DependentUpon>UCPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPaymentCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPaymentCard.Designer.cs">
+      <DependentUpon>UCPaymentCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPaymentKeyPad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPaymentKeyPad.Designer.cs">
+      <DependentUpon>UCPaymentKeyPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPePrint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPePrint.Designer.cs">
+      <DependentUpon>UCPePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPortion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPortion.Designer.cs">
+      <DependentUpon>UCPortion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPreOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPreOrder.Designer.cs">
+      <DependentUpon>UCPreOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPrevOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPrevOrder.Designer.cs">
+      <DependentUpon>UCPrevOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPriceList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPriceList.Designer.cs">
+      <DependentUpon>UCPriceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPrintBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPrintBill.Designer.cs">
+      <DependentUpon>UCPrintBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPrinter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPrinter.Designer.cs">
+      <DependentUpon>UCPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPrinterJobDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPrinterJobDetail.Designer.cs">
+      <DependentUpon>UCPrinterJobDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPrinterList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPrinterList.Designer.cs">
+      <DependentUpon>UCPrinterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPrinterMapping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPrinterMapping.Designer.cs">
+      <DependentUpon>UCPrinterMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPrinterMappingTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPrinterMappingTitle.Designer.cs">
+      <DependentUpon>UCPrinterMappingTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCPrintSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPrintSetting.Designer.cs">
+      <DependentUpon>UCPrintSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCProduct.Designer.cs">
+      <DependentUpon>UCProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCProductIncl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCProductIncl.Designer.cs">
+      <DependentUpon>UCProductIncl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCProductSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCProductSetting.Designer.cs">
+      <DependentUpon>UCProductSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCRefund.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCRefund.Designer.cs">
+      <DependentUpon>UCRefund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCReport.Designer.cs">
+      <DependentUpon>UCReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCReportItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCReportItem.Designer.cs">
+      <DependentUpon>UCReportItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCReportList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCReportList.Designer.cs">
+      <DependentUpon>UCReportList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCRice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCRice.Designer.cs">
+      <DependentUpon>UCRice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCSeat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCSeat.Designer.cs">
+      <DependentUpon>UCSeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCSendOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCSendOrder.Designer.cs">
+      <DependentUpon>UCSendOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCSettingAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCSettingAll.Designer.cs">
+      <DependentUpon>UCSettingAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCShiftItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCShiftItem.Designer.cs">
+      <DependentUpon>UCShiftItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCShiftReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCShiftReport.Designer.cs">
+      <DependentUpon>UCShiftReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCShiftTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCShiftTitle.Designer.cs">
+      <DependentUpon>UCShiftTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCSplitBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCSplitBill.Designer.cs">
+      <DependentUpon>UCSplitBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCStore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCStore.Designer.cs">
+      <DependentUpon>UCStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTable.Designer.cs">
+      <DependentUpon>UCTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTakeAway.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTakeAway.Designer.cs">
+      <DependentUpon>UCTakeAway.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UcTakeAwayTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UcTakeAwayTitle.Designer.cs">
+      <DependentUpon>UcTakeAwayTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTextBoxKeyBoard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UC\UCTextBoxKeyBoard.Designer.cs">
+      <DependentUpon>UCTextBoxKeyBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTextBoxKeyPad.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UC\UCTextBoxKeyPad.Designer.cs">
+      <DependentUpon>UCTextBoxKeyPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTKADetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTKADetail.Designer.cs">
+      <DependentUpon>UCTKADetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCTkItemTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCTkItemTitle.Designer.cs">
+      <DependentUpon>UCTkItemTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCUser.Designer.cs">
+      <DependentUpon>UCUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCUserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCUserList.Designer.cs">
+      <DependentUpon>UCUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCUserListDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCUserListDetail.Designer.cs">
+      <DependentUpon>UCUserListDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCUserSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCUserSetting.Designer.cs">
+      <DependentUpon>UCUserSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCVoidAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCVoidAll.Designer.cs">
+      <DependentUpon>UCVoidAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCVoidItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCVoidItem.Designer.cs">
+      <DependentUpon>UCVoidItem.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccountDebit.resx">
+      <DependentUpon>frmAccountDebit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNewCustomer.resx">
+      <DependentUpon>frmAddNewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPrinter.resx">
+      <DependentUpon>frmAddPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSeat.resx">
+      <DependentUpon>frmAddSeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgainShift.resx">
+      <DependentUpon>frmAgainShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBackupData.resx">
+      <DependentUpon>frmBackupData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCashOut.resx">
+      <DependentUpon>frmCashOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePrice.resx">
+      <DependentUpon>frmChangePrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChooseCard.resx">
+      <DependentUpon>frmChooseCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChooseeTableJoin.resx">
+      <DependentUpon>frmChooseeTableJoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfirm.resx">
+      <DependentUpon>frmConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDailogExit.resx">
+      <DependentUpon>frmDailogExit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatabaseSetting.resx">
+      <DependentUpon>frmDatabaseSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiscount.resx">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditProductPriceList.resx">
+      <DependentUpon>frmEditProductPriceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEndShift.resx">
+      <DependentUpon>frmEndShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFloor.resx">
+      <DependentUpon>frmFloor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGroupAdd.resx">
+      <DependentUpon>frmGroupAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistoryAccPayment.resx">
+      <DependentUpon>frmHistoryAccPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJoinTable.resx">
+      <DependentUpon>frmJoinTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKeyBoard.resx">
+      <DependentUpon>frmKeyBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKeyPad.resx">
+      <DependentUpon>frmKeyPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKeyPadTransferTable.resx">
+      <DependentUpon>frmKeyPadTransferTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKillPos.resx">
+      <DependentUpon>frmKillPos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuAdd.resx">
+      <DependentUpon>frmMenuAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuAddItemList.resx">
+      <DependentUpon>frmMenuAddItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuSetting.resx">
+      <DependentUpon>frmMenuSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessager .resx">
+      <DependentUpon>frmMessager .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewShift.resx">
+      <DependentUpon>frmNewShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNote.resx">
+      <DependentUpon>frmNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenItem.resx">
+      <DependentUpon>frmOpenItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayMent.resx">
+      <DependentUpon>frmPayMent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentAcc.resx">
+      <DependentUpon>frmPaymentAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentCard.resx">
+      <DependentUpon>frmPaymentCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentCash.resx">
+      <DependentUpon>frmPaymentCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrevOrder.resx">
+      <DependentUpon>frmPrevOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrinterSetting.resx">
+      <DependentUpon>frmPrinterSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcessing.resx">
+      <DependentUpon>frmProcessing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoleAdd.resx">
+      <DependentUpon>frmRoleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeat.resx">
+      <DependentUpon>frmSeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSecondDisplay.resx">
+      <DependentUpon>frmSecondDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettingAll.resx">
+      <DependentUpon>frmSettingAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettingPrint.resx">
+      <DependentUpon>frmSettingPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShift.resx">
+      <DependentUpon>frmShift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTakeAway.resx">
+      <DependentUpon>frmTakeAway.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTKAOrder.resx">
+      <DependentUpon>frmTKAOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTool.resx">
+      <DependentUpon>frmTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTranComplete.resx">
+      <DependentUpon>frmTranComplete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferTable.resx">
+      <DependentUpon>frmTransferTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserSetting.resx">
+      <DependentUpon>frmUserSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UC\UCAccount.resx">
+      <DependentUpon>UCAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCAccPayment.resx">
+      <DependentUpon>UCAccPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCAddseat.resx">
+      <DependentUpon>UCAddseat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCBackupItem.resx">
+      <DependentUpon>UCBackupItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCBtnPayment.resx">
+      <DependentUpon>UCBtnPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCbtnPrinter.resx">
+      <DependentUpon>UCbtnPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCCancelOrder.resx">
+      <DependentUpon>UCCancelOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCCashOut.resx">
+      <DependentUpon>UCCashOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCCategoryPrint.resx">
+      <DependentUpon>UCCategoryPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCCustomerItem.resx">
+      <DependentUpon>UCCustomerItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCCustomerTitle.resx">
+      <DependentUpon>UCCustomerTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCDailySaleQTYReport.resx">
+      <DependentUpon>UCDailySaleQTYReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCDailySaleSumaryReport.resx">
+      <DependentUpon>UCDailySaleSumaryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCDatabase.resx">
+      <DependentUpon>UCDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCDeparmentDetail.resx">
+      <DependentUpon>UCDeparmentDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCDepartmentListDetail.resx">
+      <DependentUpon>UCDepartmentListDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCDiscount.resx">
+      <DependentUpon>UCDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCFileBackupTitle.resx">
+      <DependentUpon>UCFileBackupTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCFloorPlan.resx">
+      <DependentUpon>UCFloorPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCGroup.resx">
+      <DependentUpon>UCGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCHistoryAccPayment.resx">
+      <DependentUpon>UCHistoryAccPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCInventory.resx">
+      <DependentUpon>UCInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCItemModifierOfMenu.resx">
+      <DependentUpon>UCItemModifierOfMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCAllPayMent.resx">
+      <DependentUpon>UCAllPayMent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCGroupList.resx">
+      <DependentUpon>UCGroupList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCGroupListItem.resx">
+      <DependentUpon>UCGroupListItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCGroupMenuOrder.resx">
+      <DependentUpon>UCGroupMenuOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCInfoTop.resx">
+      <DependentUpon>UCInfoTop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCItem.resx">
+      <DependentUpon>UCItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCItemList.resx">
+      <DependentUpon>UCItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCItemListButton.resx">
+      <DependentUpon>UCItemListButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCItemOfCategoryPrint.resx">
+      <DependentUpon>UCItemOfCategoryPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCKeypad.resx">
+      <DependentUpon>UCKeypad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCKeyPadOrder.resx">
+      <DependentUpon>UCKeyPadOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCMenu.resx">
+      <DependentUpon>UCMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCMenuAdd.resx">
+      <DependentUpon>UCMenuAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCMenuList.resx">
+      <DependentUpon>UCMenuList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCMenuOfGroup.resx">
+      <DependentUpon>UCMenuOfGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCMenuOrdercs.resx">
+      <DependentUpon>UCMenuOrdercs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCModifier.resx">
+      <DependentUpon>UCModifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCModifierItem.resx">
+      <DependentUpon>UCModifierItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCModifierOfMenu.resx">
+      <DependentUpon>UCModifierOfMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCNote.resx">
+      <DependentUpon>UCNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCOpenItem.resx">
+      <DependentUpon>UCOpenItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCOpenTill.resx">
+      <DependentUpon>UCOpenTill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCOrder.resx">
+      <DependentUpon>UCOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPayment.resx">
+      <DependentUpon>UCPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPaymentCard.resx">
+      <DependentUpon>UCPaymentCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPaymentKeyPad.resx">
+      <DependentUpon>UCPaymentKeyPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPePrint.resx">
+      <DependentUpon>UCPePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPortion.resx">
+      <DependentUpon>UCPortion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPreOrder.resx">
+      <DependentUpon>UCPreOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPrevOrder.resx">
+      <DependentUpon>UCPrevOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPriceList.resx">
+      <DependentUpon>UCPriceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPrintBill.resx">
+      <DependentUpon>UCPrintBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPrinter.resx">
+      <DependentUpon>UCPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPrinterJobDetail.resx">
+      <DependentUpon>UCPrinterJobDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPrinterList.resx">
+      <DependentUpon>UCPrinterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPrinterMapping.resx">
+      <DependentUpon>UCPrinterMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPrinterMappingTitle.resx">
+      <DependentUpon>UCPrinterMappingTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPrintSetting.resx">
+      <DependentUpon>UCPrintSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCProduct.resx">
+      <DependentUpon>UCProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCProductIncl.resx">
+      <DependentUpon>UCProductIncl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCProductSetting.resx">
+      <DependentUpon>UCProductSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCRefund.resx">
+      <DependentUpon>UCRefund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCReport.resx">
+      <DependentUpon>UCReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCReportItem.resx">
+      <DependentUpon>UCReportItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCReportList.resx">
+      <DependentUpon>UCReportList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCRice.resx">
+      <DependentUpon>UCRice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCSeat.resx">
+      <DependentUpon>UCSeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCSendOrder.resx">
+      <DependentUpon>UCSendOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCSettingAll.resx">
+      <DependentUpon>UCSettingAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCShiftItem.resx">
+      <DependentUpon>UCShiftItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCShiftReport.resx">
+      <DependentUpon>UCShiftReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCShiftTitle.resx">
+      <DependentUpon>UCShiftTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCSplitBill.resx">
+      <DependentUpon>UCSplitBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCStore.resx">
+      <DependentUpon>UCStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTable.resx">
+      <DependentUpon>UCTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTakeAway.resx">
+      <DependentUpon>UCTakeAway.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UcTakeAwayTitle.resx">
+      <DependentUpon>UcTakeAwayTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTKADetail.resx">
+      <DependentUpon>UCTKADetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCTkItemTitle.resx">
+      <DependentUpon>UCTkItemTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCUser.resx">
+      <DependentUpon>UCUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCUserList.resx">
+      <DependentUpon>UCUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCUserListDetail.resx">
+      <DependentUpon>UCUserListDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCUserSetting.resx">
+      <DependentUpon>UCUserSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCVoidAll.resx">
+      <DependentUpon>UCVoidAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCVoidItem.resx">
+      <DependentUpon>UCVoidItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModelPOS\ModelPOS.csproj">
+      <Project>{4065a0ed-288b-4694-81d5-c6f02421277c}</Project>
+      <Name>ModelPOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Printer\Printer.csproj">
+      <Project>{dc3f2115-2144-4a2d-be1d-d0fdfa84f991}</Project>
+      <Name>Printer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServicePOS\ServicePOS.csproj">
+      <Project>{51045385-d22a-46e9-9230-c0eab53c3338}</Project>
+      <Name>ServicePOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemLog\SystemLog.csproj">
+      <Project>{c3deb7b0-9be5-430e-b774-715f65e6a8ff}</Project>
+      <Name>SystemLog</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckedPass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckedPass1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon_9yx_icon.ico" />
+    <None Include="Resources\tka-enable.png" />
+    <None Include="Resources\eatin-disable.png" />
+    <None Include="Resources\eatin-enable.png" />
+    <None Include="Resources\store_enable.png" />
+    <None Include="Resources\store-disable.png" />
+    <None Include="Resources\tka-disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

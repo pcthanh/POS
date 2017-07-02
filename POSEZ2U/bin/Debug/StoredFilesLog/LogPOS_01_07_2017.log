@@ -1,0 +1,452 @@
+7/1/2017 8:32:44 AM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 8:39:55 AM:::frmMain::::::::::::::::::::::::btnSettingAll_Click:::::::::::::::::::Unable to cast object of type 'System.Windows.Forms.Button' to type 'POSEZ2U.UCCustomerItem'.
+7/1/2017 9:18:06 PM:::addOrder::::::::::Item::::::Cha Gio:::::10000
+7/1/2017 9:18:06 PM:::addOrder::::::::::Item::::::Cha Gio:::::10000
+7/1/2017 9:18:07 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:18:11 PM:::addOrder::::::::::Item::::::Banh Xeo:::::14000
+7/1/2017 9:18:11 PM:::addOrder::::::::::Item::::::Goi Cuon:::::10000
+7/1/2017 9:18:11 PM:::addOrder::::::::::Item::::::Goi Bo Tai Me:::::18000
+7/1/2017 9:18:11 PM:::addOrder::::::::::Item::::::Pho Ga Chat:::::14000
+7/1/2017 9:18:11 PM:::addOrder::::::::::Item::::::Com Bo Luc Lac:::::14000
+7/1/2017 9:18:11 PM:::addOrder::::::::::Item::::::Com Chien Ca Mam:::::14000
+7/1/2017 9:18:11 PM:::addOrder::::::::::Item::::::Com Ga Nuong:::::12000
+7/1/2017 9:18:11 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:18:15 PM:::addOrder::::::::::Item::::::Cha Gio:::::10000
+7/1/2017 9:18:15 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:18:18 PM:::addOrder::::::::::Item::::::Cha Gio:::::10000
+7/1/2017 9:18:18 PM:::addOrder::::::::::Item::::::Cha Gio:::::10000
+7/1/2017 9:18:18 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:19:38 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:19:40 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:19:42 PM:::addOrder::::::::::Item::::::Pho Tai Nam Bo Vien:::::12000
+7/1/2017 9:19:44 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 9:19:44 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 9:19:44 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 9:19:44 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 9:19:44 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 9:19:44 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 9:19:44 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Pho Tai Nam Sach
+7/1/2017 9:19:44 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Pho Tai Nam Bo Vien
+7/1/2017 9:19:52 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:19:53 PM:::addOrder::::::::::Item::::::Pho Tai Nam Bo Vien:::::12000
+7/1/2017 9:19:53 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:19:54 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:19:54 PM:::addOrder::::::::::Item::::::Pho Tai Nam Bo Vien:::::12000
+7/1/2017 9:19:56 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 9:19:56 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 9:19:56 PM:::frmPayment::::::::::::::::ucOpenTill1_Click:::::::::::::::::Dataprint 80mm Series Printer
+7/1/2017 9:20:39 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::0
+7/1/2017 9:20:39 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 9:26:24 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:26:28 PM:::addOrder::::::::::Item::::::Pho Tai Nam Bo Vien:::::12000
+7/1/2017 9:26:29 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:26:30 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 9:26:30 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 9:26:30 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 9:26:30 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 9:26:30 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 9:26:30 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 9:26:30 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Pho Tai Nam Bo Vien
+7/1/2017 9:26:30 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Pho Tai Nam Sach
+7/1/2017 9:26:47 PM:::addOrder::::::::::Item::::::Pho Tai Nam Bo Vien:::::12000
+7/1/2017 9:26:47 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:26:47 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:26:48 PM:::addOrder::::::::::Item::::::Pho Tai Nam Bo Vien:::::12000
+7/1/2017 9:26:48 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:26:51 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 9:26:51 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 9:26:51 PM:::frmPayment::::::::::::::::ucOpenTill1_Click:::::::::::::::::Dataprint 80mm Series Printer
+7/1/2017 9:26:56 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::0
+7/1/2017 9:26:56 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 9:34:08 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:34:11 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:34:13 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 9:34:13 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 9:34:13 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 9:34:13 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 9:34:13 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 9:34:13 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Pho Tai Nam Sach
+7/1/2017 9:34:25 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 9:34:32 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:34:32 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:34:34 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:34:37 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 9:34:37 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 9:45:26 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:45:28 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:45:29 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 9:45:29 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 9:45:29 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 9:45:29 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 9:45:29 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 9:45:29 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Pho Tai Nam Sach
+7/1/2017 9:45:39 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 9:45:43 PM:::addOrder::::::::::Item::::::Banh Xeo:::::14000
+7/1/2017 9:45:43 PM:::addOrder::::::::::Item::::::Goi Cuon:::::10000
+7/1/2017 9:45:43 PM:::addOrder::::::::::Item::::::Goi Bo Tai Me:::::18000
+7/1/2017 9:45:43 PM:::addOrder::::::::::Item::::::Pho Ga Chat:::::14000
+7/1/2017 9:45:43 PM:::addOrder::::::::::Item::::::Com Bo Luc Lac:::::14000
+7/1/2017 9:45:43 PM:::addOrder::::::::::Item::::::Com Chien Ca Mam:::::14000
+7/1/2017 9:45:43 PM:::addOrder::::::::::Item::::::Com Ga Nuong:::::12000
+7/1/2017 9:45:43 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:45:49 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:45:49 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 9:45:50 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 9:45:52 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 9:45:52 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 9:46:02 PM:::frmOrder:::::::::::::::::::::::btnPayMent_Click::::::::::::::::;The operation completed successfully
+7/1/2017 10:03:12 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:03:18 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:03:20 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 10:03:20 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:03:20 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:03:20 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:03:20 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:03:20 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:03:20 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Pho Tai Nam Sach
+7/1/2017 10:03:23 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:03:39 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 10:03:39 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:04:48 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 10:04:48 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:04:50 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 10:04:53 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:04:53 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:05:58 PM:::frmPayment::::::::::::::::ucOpenTill1_Click:::::::::::::::::Dataprint 80mm Series Printer
+7/1/2017 10:06:15 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::0
+7/1/2017 10:06:15 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:06:17 PM:::addOrder::::::::::Item::::::Banh Xeo:::::14000
+7/1/2017 10:06:17 PM:::addOrder::::::::::Item::::::Goi Cuon:::::10000
+7/1/2017 10:06:17 PM:::addOrder::::::::::Item::::::Goi Bo Tai Me:::::18000
+7/1/2017 10:06:17 PM:::addOrder::::::::::Item::::::Pho Ga Chat:::::14000
+7/1/2017 10:06:17 PM:::addOrder::::::::::Item::::::Com Bo Luc Lac:::::14000
+7/1/2017 10:06:17 PM:::addOrder::::::::::Item::::::Com Chien Ca Mam:::::14000
+7/1/2017 10:06:17 PM:::addOrder::::::::::Item::::::Com Ga Nuong:::::12000
+7/1/2017 10:06:17 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:06:20 PM:::addOrder::::::::::Item::::::Banh Xeo:::::14000
+7/1/2017 10:06:20 PM:::addOrder::::::::::Item::::::Goi Cuon:::::10000
+7/1/2017 10:06:20 PM:::addOrder::::::::::Item::::::Goi Bo Tai Me:::::18000
+7/1/2017 10:06:20 PM:::addOrder::::::::::Item::::::Pho Ga Chat:::::14000
+7/1/2017 10:06:20 PM:::addOrder::::::::::Item::::::Com Bo Luc Lac:::::14000
+7/1/2017 10:06:20 PM:::addOrder::::::::::Item::::::Com Chien Ca Mam:::::14000
+7/1/2017 10:06:20 PM:::addOrder::::::::::Item::::::Com Ga Nuong:::::12000
+7/1/2017 10:06:25 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:06:25 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::7
+7/1/2017 10:06:28 PM:::frmPayment::::::::::::::::ucOpenTill1_Click:::::::::::::::::Dataprint 80mm Series Printer
+7/1/2017 10:06:41 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::0
+7/1/2017 10:06:41 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::7
+7/1/2017 10:07:22 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:07:30 PM:::addOrder::::::::::Item::::::Hu Tieu Do Bien:::::13000
+7/1/2017 10:08:12 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:08:14 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:08:14 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 10:08:14 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:08:14 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:08:14 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:08:14 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:08:14 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Hu Tieu Do Bien
+7/1/2017 10:08:14 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:08:17 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:08:19 PM:::addOrder::::::::::Item::::::Hu Tieu Do Bien:::::13000
+7/1/2017 10:08:19 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:08:19 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:08:20 PM:::addOrder::::::::::Item::::::Hu Tieu Do Bien:::::13000
+7/1/2017 10:08:20 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:08:22 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:08:22 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 10:08:23 PM:::frmPayment::::::::::::::::ucOpenTill1_Click:::::::::::::::::Dataprint 80mm Series Printer
+7/1/2017 10:08:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::0
+7/1/2017 10:08:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 10:23:28 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:23:35 PM:::addOrder::::::::::Item::::::Hu Tieu Suon Nuong:::::12000
+7/1/2017 10:23:38 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 10:23:41 PM:::addOrder::::::::::Item::::::Pho Tai Nam Bo Vien:::::12000
+7/1/2017 10:23:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:23:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::3
+7/1/2017 10:23:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:23:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:23:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:23:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:23:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:23:42 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Hu Tieu Suon Nuong
+7/1/2017 10:23:42 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Pho Tai Nam Sach
+7/1/2017 10:23:42 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Pho Tai Nam Bo Vien
+7/1/2017 10:23:44 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:23:46 PM:::addOrder::::::::::Item::::::Hu Tieu Suon Nuong:::::12000
+7/1/2017 10:23:46 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 10:23:46 PM:::addOrder::::::::::Item::::::Pho Tai Nam Bo Vien:::::12000
+7/1/2017 10:23:46 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:23:46 PM:::addOrder::::::::::Item::::::Hu Tieu Suon Nuong:::::12000
+7/1/2017 10:23:46 PM:::addOrder::::::::::Item::::::Pho Tai Nam Sach:::::12000
+7/1/2017 10:23:46 PM:::addOrder::::::::::Item::::::Pho Tai Nam Bo Vien:::::12000
+7/1/2017 10:23:49 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:23:49 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::3
+7/1/2017 10:23:49 PM:::frmPayment::::::::::::::::ucOpenTill1_Click:::::::::::::::::Dataprint 80mm Series Printer
+7/1/2017 10:24:18 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::0
+7/1/2017 10:24:18 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::3
+7/1/2017 10:24:22 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:24:25 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:24:26 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:24:26 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:24:26 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:24:26 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:24:26 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:24:26 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:24:28 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:24:30 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:24:30 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:24:31 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:24:33 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:24:33 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:24:33 PM:::frmPayment::::::::::::::::ucOpenTill1_Click:::::::::::::::::Dataprint 80mm Series Printer
+7/1/2017 10:24:39 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::0
+7/1/2017 10:24:39 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:27:01 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:27:05 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:27:06 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:27:06 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:27:06 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:27:06 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:27:06 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:27:06 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:27:16 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:27:20 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:27:20 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:27:21 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:27:27 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:27:27 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:28:25 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:28:28 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:28:29 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:28:29 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:28:29 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:28:29 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:28:29 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:28:29 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:28:35 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:28:39 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:28:39 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:28:39 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:28:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:28:42 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:30:30 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:30:31 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:30:32 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:30:32 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:30:32 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:30:32 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:30:32 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:30:32 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:30:34 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:30:36 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:30:36 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:30:37 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:30:39 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:30:39 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:31:43 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:31:46 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:31:47 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:31:47 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:31:47 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:31:47 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:31:47 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:31:47 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:31:53 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:31:56 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:31:56 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:31:57 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:31:59 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:31:59 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:33:20 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:33:22 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:33:23 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:33:23 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:33:23 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:33:23 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:33:23 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:33:23 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:33:29 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:33:32 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:33:33 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:33:33 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:33:36 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:33:36 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:33:43 PM:::32.44131
+7/1/2017 10:33:52 PM:::62.63337
+7/1/2017 10:33:55 PM:::111.9023
+7/1/2017 10:34:04 PM:::142.9014
+7/1/2017 10:35:19 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:35:34 PM:::addOrder::::::::::Item::::::Bun Thit Nuong:::::12000
+7/1/2017 10:35:38 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:35:49 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:35:53 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:35:53 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:35:53 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:35:53 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:35:53 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:35:53 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:35:55 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:35:58 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:35:58 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:35:59 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:36:01 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:36:01 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:36:06 PM:::32.44131
+7/1/2017 10:36:09 PM:::62.63337
+7/1/2017 10:36:12 PM:::111.9023
+7/1/2017 10:36:20 PM:::142.9014
+7/1/2017 10:36:31 PM:::170.7198
+7/1/2017 10:36:35 PM:::28.47403
+7/1/2017 10:38:17 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:38:20 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:38:21 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:38:21 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:38:21 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:38:21 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:38:21 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:38:21 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:38:27 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:38:31 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:38:31 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:38:34 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:38:36 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:38:36 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::1
+7/1/2017 10:38:39 PM:::32.44131
+7/1/2017 10:38:39 PM:::62.63337
+7/1/2017 10:38:39 PM:::111.9023
+7/1/2017 10:38:39 PM:::142.9014
+7/1/2017 10:38:39 PM:::170.7198
+7/1/2017 10:38:39 PM:::28.47403
+7/1/2017 10:43:11 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:43:21 PM:::addOrder::::::::::Item::::::Nem Oc ( Cha Gio Oc ):::::10000
+7/1/2017 10:43:23 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:43:25 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:43:25 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 10:43:25 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:43:25 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:43:25 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:43:25 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:43:25 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Nem Oc ( Cha Gio Oc )
+7/1/2017 10:43:25 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:43:27 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:43:29 PM:::addOrder::::::::::Item::::::Nem Oc ( Cha Gio Oc ):::::10000
+7/1/2017 10:43:30 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:43:30 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:43:31 PM:::addOrder::::::::::Item::::::Nem Oc ( Cha Gio Oc ):::::10000
+7/1/2017 10:43:31 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:43:33 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:43:33 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 10:43:36 PM:::35.63549
+7/1/2017 10:43:36 PM:::58.69321
+7/1/2017 10:43:36 PM:::67.42802
+7/1/2017 10:43:36 PM:::98.42709
+7/1/2017 10:43:36 PM:::126.2456
+7/1/2017 10:43:36 PM:::149.3033
+7/1/2017 10:43:36 PM:::158.0381
+7/1/2017 10:43:36 PM:::9.39037
+7/1/2017 10:43:36 PM:::32.44131
+7/1/2017 10:43:36 PM:::62.63337
+7/1/2017 10:43:36 PM:::111.9023
+7/1/2017 10:43:36 PM:::142.9014
+7/1/2017 10:43:36 PM:::170.7198
+7/1/2017 10:43:36 PM:::28.47403
+7/1/2017 10:43:36 PM:::frmPayment::::::::::::::::ucOpenTill1_Click:::::::::::::::::Dataprint 80mm Series Printer
+7/1/2017 10:44:26 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::0
+7/1/2017 10:44:26 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 10:45:20 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:45:23 PM:::addOrder::::::::::Item::::::Nem Oc ( Cha Gio Oc ):::::10000
+7/1/2017 10:45:26 PM:::addOrder::::::::::Item::::::Com Tam Suon Nuong:::::12000
+7/1/2017 10:45:36 PM:::addOrder::::::::::Item::::::Hu Tieu Suon Nuong:::::12000
+7/1/2017 10:45:39 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:45:42 PM:::addOrder::::::::::Item::::::Banh Canh Cua Do Bien:::::13000
+7/1/2017 10:45:46 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:45:46 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::5
+7/1/2017 10:45:46 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:45:46 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:45:46 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:45:46 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:45:46 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:45:46 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:45:46 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:45:46 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Nem Oc ( Cha Gio Oc )
+7/1/2017 10:45:46 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Com Tam Suon Nuong
+7/1/2017 10:45:46 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Hu Tieu Suon Nuong
+7/1/2017 10:45:46 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Bun Thit Nuong Cha Gio
+7/1/2017 10:45:46 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Banh Canh Cua Do Bien
+7/1/2017 10:45:48 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:45:49 PM:::addOrder::::::::::Item::::::Nem Oc ( Cha Gio Oc ):::::10000
+7/1/2017 10:45:49 PM:::addOrder::::::::::Item::::::Com Tam Suon Nuong:::::12000
+7/1/2017 10:45:49 PM:::addOrder::::::::::Item::::::Hu Tieu Suon Nuong:::::12000
+7/1/2017 10:45:49 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:45:49 PM:::addOrder::::::::::Item::::::Banh Canh Cua Do Bien:::::13000
+7/1/2017 10:45:50 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:45:50 PM:::addOrder::::::::::Item::::::Nem Oc ( Cha Gio Oc ):::::10000
+7/1/2017 10:45:50 PM:::addOrder::::::::::Item::::::Com Tam Suon Nuong:::::12000
+7/1/2017 10:45:50 PM:::addOrder::::::::::Item::::::Hu Tieu Suon Nuong:::::12000
+7/1/2017 10:45:50 PM:::addOrder::::::::::Item::::::Bun Thit Nuong Cha Gio:::::12000
+7/1/2017 10:45:50 PM:::addOrder::::::::::Item::::::Banh Canh Cua Do Bien:::::13000
+7/1/2017 10:45:52 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:45:52 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::5
+7/1/2017 10:45:53 PM:::35.63549
+7/1/2017 10:45:53 PM:::58.69321
+7/1/2017 10:45:53 PM:::67.42802
+7/1/2017 10:45:53 PM:::98.42709
+7/1/2017 10:45:53 PM:::126.2456
+7/1/2017 10:45:53 PM:::149.3033
+7/1/2017 10:45:53 PM:::158.0381
+7/1/2017 10:45:53 PM:::9.39037
+7/1/2017 10:45:53 PM:::36.42216
+7/1/2017 10:45:53 PM:::69.81516
+7/1/2017 10:45:53 PM:::109.5558
+7/1/2017 10:45:53 PM:::158.8248
+7/1/2017 10:45:53 PM:::49.92449
+7/1/2017 10:45:53 PM:::23.69972
+7/1/2017 10:45:53 PM:::57.08595
+7/1/2017 10:45:53 PM:::96.82661
+7/1/2017 10:45:53 PM:::146.0955
+7/1/2017 10:45:53 PM:::32.44131
+7/1/2017 10:45:53 PM:::62.63337
+7/1/2017 10:45:53 PM:::111.9023
+7/1/2017 10:45:53 PM:::142.9014
+7/1/2017 10:45:53 PM:::170.7198
+7/1/2017 10:45:53 PM:::28.47403
+7/1/2017 10:45:53 PM:::40.39622
+7/1/2017 10:45:53 PM:::80.13689
+7/1/2017 10:45:53 PM:::111.136
+7/1/2017 10:45:53 PM:::134.1801
+7/1/2017 10:45:53 PM:::169.1533
+7/1/2017 10:45:53 PM:::35.6287
+7/1/2017 10:45:53 PM:::frmPayment::::::::::::::::ucOpenTill1_Click:::::::::::::::::Dataprint 80mm Series Printer
+7/1/2017 10:47:02 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::0
+7/1/2017 10:47:02 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::5
+7/1/2017 10:53:44 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:53:46 PM:::addOrder::::::::::Item::::::Lau Ga 1/2 Chicken:::::45000
+7/1/2017 10:53:49 PM:::addOrder::::::::::Item::::::Lau Ga Whole Chicken:::::60000
+7/1/2017 10:53:51 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::2
+7/1/2017 10:53:51 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 10:53:51 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::1
+7/1/2017 10:53:51 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::PrinterID::::::::::::::2
+7/1/2017 10:53:51 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:53:51 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::OrderMain.ListOrderDetail[j].ListPrintJob[k].PrinterID::::::::::::::2
+7/1/2017 10:53:51 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Lau Ga 1/2 Chicken
+7/1/2017 10:53:51 PM:::PrinterServer::::::::::::::::::::::PrintData::::::::::::::::::::::CountOrderPrint::::::::::Lau Ga Whole Chicken
+7/1/2017 10:53:53 PM:::btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::The operation completed successfully
+7/1/2017 10:53:57 PM:::addOrder::::::::::Item::::::Lau Ga 1/2 Chicken:::::45000
+7/1/2017 10:53:57 PM:::addOrder::::::::::Item::::::Lau Ga Whole Chicken:::::60000
+7/1/2017 10:53:57 PM:::frmsecondDisplay:::::::::::::::::::::ShowCustomerDisplay::::::::::::::1
+7/1/2017 10:53:59 PM:::addOrder::::::::::Item::::::Lau Ga 1/2 Chicken:::::45000
+7/1/2017 10:53:59 PM:::addOrder::::::::::Item::::::Lau Ga Whole Chicken:::::60000
+7/1/2017 10:54:01 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::1
+7/1/2017 10:54:01 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
+7/1/2017 10:54:01 PM:::30.06772
+7/1/2017 10:54:01 PM:::53.12545
+7/1/2017 10:54:01 PM:::76.98341
+7/1/2017 10:54:01 PM:::136.608
+7/1/2017 10:54:01 PM:::30.06772
+7/1/2017 10:54:01 PM:::53.12545
+7/1/2017 10:54:01 PM:::100.014
+7/1/2017 10:54:01 PM:::159.6386
+7/1/2017 10:54:01 PM:::60.28012
+7/1/2017 10:54:01 PM:::frmPayment::::::::::::::::ucOpenTill1_Click:::::::::::::::::Dataprint 80mm Series Printer
+7/1/2017 10:54:03 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count prtiter::::::::::::::0
+7/1/2017 10:54:03 PM:::PriterServer:::::::::::::::::::PrintData:::::::::::::Count Order::::::::::::::2
