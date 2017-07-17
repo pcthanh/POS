@@ -421,7 +421,8 @@ namespace POSEZ2U
                         frm.items.Seat = seat;
                     if (flagUcSeatClick == 1)
                         frm.items.Seat = numSeat;
-                    frm.items.ChangeStatus = 1;
+                    if(OrderMain.IsLoadFromData)
+                        frm.items.ChangeStatus = 1;
                     OrderMain.addItemToList(frm.items);
                     addOrder(frm.items);
                     lblSubtotal.Text = "$" + money.Format2(OrderMain.SubTotal().ToString());
@@ -525,27 +526,11 @@ namespace POSEZ2U
                     item.ProductID = itemProduct.ProductID;
                     item.Qty = 1;
                     item.OrderID = OrderMain.OrderID;
+                    item.Category = itemProduct.CategoryID;
                     if (flagUcSeatClick == 1)
                         item.Seat = numSeat;
                     if (OrderMain.IsLoadFromData)
                         item.ChangeStatus = 1;
-
-                    //ProductionModel itemPrint = new ProductionModel();
-                    //itemPrint = ProductService.GetPrinterType(itemProduct.ProductID);
-                    //if (itemPrint != null)
-                    //{
-                    //    item.Printer = itemPrint.Printer;
-                    //    item.PrintJob = itemPrint.PrinterJob;
-                    //}
-                    //else
-                    //{
-                    //    itemPrint = ProductService.GetPrinterTypeByCate(itemProduct.CategoryID);
-                    //    if (itemPrint != null)
-                    //    {;
-                    //        item.Printer = itemPrint.Printer;
-                    //        item.PrintJob = itemPrint.PrinterJob;
-                    //    }
-                    //}
                     var dataPrint = ProductService.GetListPrintJob(itemProduct.ProductID,itemProduct.CategoryID);
                     foreach (PrinteJobDetailModel itemPrint in dataPrint)
                     {
@@ -574,7 +559,10 @@ namespace POSEZ2U
             {
 
                 UCOrder ucOrder = new UCOrder();
-                ucOrder.lblNameItem.Text = items.ProductName;
+                if (items.ItemTKA == 1)
+                    ucOrder.lblNameItem.Text = "TKA-"+items.ProductName;
+                else
+                    ucOrder.lblNameItem.Text = items.ProductName;
                 ucOrder.lblQuanityItem.Text = "1";
                 ucOrder.Tag = items;
                 ucOrder.lblPriceItem.Text = money.Format2(items.Price.ToString());
@@ -1817,20 +1805,37 @@ namespace POSEZ2U
 
         private void btnNote_Click(object sender, EventArgs e)
         {
-            try
+            #region Action noted
+            //try
+            //{
+            //    frmNote frm = new frmNote();
+            //    if (frmOpacity.ShowDialog(this, frm) == System.Windows.Forms.DialogResult.OK)
+            //    {
+            //        OrderMain.Note = frm.Note;
+            //        OrderMain.PrinterNote = frm.PrinterNote;
+            //        OrderMain.HaveNote = 1;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    SystemLog.LogPOS.WriteLog("frmOrder::::::::::::::::::::::::::::::btnNote_Click:::::::::::::::::::::::::" + ex.Message);
+            //}
+            #endregion
+            foreach (Control ctr in flpOrder.Controls)
             {
-                frmNote frm = new frmNote();
-                if (frmOpacity.ShowDialog(this, frm) == System.Windows.Forms.DialogResult.OK)
+                if (ctr.BackColor == Color.FromArgb(0, 102, 204))
                 {
-                    OrderMain.Note = frm.Note;
-                    OrderMain.PrinterNote = frm.PrinterNote;
-                    OrderMain.HaveNote = 1;
+                    UCOrder uc = (UCOrder)ctr;
+                    OrderDetailModel itemUc = (OrderDetailModel)uc.Tag;
+                    uc.lblNameItem.Text= "TKA-"+itemUc.ProductName;
+                    for(int i=0; i< OrderMain.ListOrderDetail.Count; i++){
+                        if(OrderMain.ListOrderDetail[i].ProductID==itemUc.ProductID&&OrderMain.ListOrderDetail[i].KeyItem==itemUc.KeyItem){
+                            OrderMain.ListOrderDetail[i].ItemTKA =1;
+                        }
+                    }
                 }
             }
-            catch (Exception ex)
-            {
-                SystemLog.LogPOS.WriteLog("frmOrder::::::::::::::::::::::::::::::btnNote_Click:::::::::::::::::::::::::" + ex.Message);
-            }
+           
         }
 
         private void timeChangeColor_Tick(object sender, EventArgs e)

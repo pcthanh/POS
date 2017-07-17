@@ -392,7 +392,7 @@ namespace ServicePOS
 
         public IEnumerable<PrinterModel> GetListPrinterMapping()
         {
-            var data = _context.PRINTERs.Where(x => x.Status == 1 && x.PrinterType==1)
+            var data = _context.PRINTERs.Where(x => x.Status == 1)
                 .Select(x => new PrinterModel
                 {
                     PrinterName = x.PrinterName,

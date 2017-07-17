@@ -56,6 +56,7 @@ namespace ServicePOS
             orderDate.Note = itemOrder.Note;
             orderDate.PrinterNote = itemOrder.PrinterNote;
             orderDate.PDA = itemOrder.PDA;
+           
             return orderDate;
         }
         private List<ORDER_DETAIL_DATE> CopyOrderDetailDate(OrderDateModel itemOrder)
@@ -87,6 +88,8 @@ namespace ServicePOS
                         orderDetaiDate.CreateDate = itemOrder.ListOrderDetail[i].CreateDate ?? DateTime.Now;
                         orderDetaiDate.UpdateBy = itemOrder.ListOrderDetail[i].UpdateBy ?? 0;
                         orderDetaiDate.UpdateDate = itemOrder.ListOrderDetail[i].UpdateDate ?? DateTime.Now;
+                        orderDetaiDate.Category = itemOrder.ListOrderDetail[i].Category;
+                        orderDetaiDate.ItemTKA = itemOrder.ListOrderDetail[i].ItemTKA;
                         lstorderDetailDate.Add(orderDetaiDate);
                     }
                 }
@@ -212,8 +215,8 @@ namespace ServicePOS
                         {
                             // _context.Entry(item).State = System.Data.Entity.EntityState.Added;;
 
-                            _context.Database.ExecuteSqlCommand("insert into ORDER_DETAIL_DATE(OrderID,OrderNumber,ProductID,KeyItem,Status,Price,Qty,Total,Seat,DynId,PrintType)values" +
-                                "('" + item.OrderID + "', '"+ item.OrderNumber+"', '" + item.ProductID + "','" + item.KeyItem + "','" + item.Status + "','" + item.Price + "','" + item.Qty + "','" + item.Total + "','" + item.Seat + "','"+item.DynId+"','"+ item.PrintType+"')");
+                            _context.Database.ExecuteSqlCommand("insert into ORDER_DETAIL_DATE(OrderID,OrderNumber,ProductID,KeyItem,Status,Price,Qty,Total,Seat,DynId,PrintType,Category)values" +
+                                "('" + item.OrderID + "', '"+ item.OrderNumber+"', '" + item.ProductID + "','" + item.KeyItem + "','" + item.Status + "','" + item.Price + "','" + item.Qty + "','" + item.Total + "','" + item.Seat + "','"+item.DynId+"','"+ item.PrintType+"','"+ item.Category+"')");
 
                         }
                         lstOrderDetailModifire = CopyOrderMidifireDate(orderDateMoldeTemp);
@@ -418,7 +421,9 @@ namespace ServicePOS
                      DynID=x.pro.item.DynId??0,
                      OrderDetailID =x.pro.item.OrderDetailID,
                      Printer = x.pro.item.PrintType??0,
-                     OrderNumber =x.pro.item.OrderNumber
+                     OrderNumber =x.pro.item.OrderNumber,
+                     Category = x.pro.item.Category??0,
+                     ItemTKA = x.pro.item.ItemTKA??0
                  });
                 var openitems = _context.ORDER_DETAIL_DATE.Join(_context.ORDER_OPEN_ITEM, x => x.DynId, openitem => openitem.dynID, (x, openitem) => new { x, openitem })
                             .Where(a => a.x.DynId == a.openitem.dynID && a.x.OrderID==dataOrder.OrderID)
@@ -436,7 +441,9 @@ namespace ServicePOS
                                 DynID = a.x.DynId ?? 0,
                                 OrderDetailID = a.x.OrderDetailID,
                                 OrderNumber = a.x.OrderNumber,
-                                Printer = a.openitem.PrinterID??0
+                                Printer = a.openitem.PrinterID??0,
+                                Category =a.x.Category??0,
+                                ItemTKA = a.x.ItemTKA??0
                             });
                 foreach (OrderDetailModel openItem in openitems)
                 {
@@ -448,7 +455,7 @@ namespace ServicePOS
                 foreach(OrderDetailModel item in data)
                 {
                     int keyItemOld = item.KeyItem;
-                    var print = _context.PRINTE_JOB_DETAIL.Where(x => x.ProductID == item.ProductID)
+                    var print = _context.PRINTE_JOB_DETAIL.Where(x => x.ProductID == item.ProductID &&x.CategoryID == item.Category)
                        .Select(x => new PrinteJobDetailModel
                        {
                            ProductID = x.ProductID,

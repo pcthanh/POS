@@ -33,5 +33,7 @@ namespace ServicePOS.Model
         public int Printer { get; set; }
         public int PrintJob { get; set; }
         public string OrderNumber { get; set; }
+        public int Category { get; set; }
+        public int ItemTKA { get; set; }
     }
 }

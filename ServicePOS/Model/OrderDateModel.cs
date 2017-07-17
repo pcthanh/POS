@@ -74,8 +74,13 @@ namespace ServicePOS.Model
             {
                 if (modifire.ChangeStatus == 1)
                 {
-                    if (ListOrderDetail[keyItem - 1].ChangeStatus==0)
-                            ListOrderDetail[keyItem - 1].ChangeStatus =3;
+                    if (ListOrderDetail[keyItem - 1].ChangeStatus==0){
+                        if (isNewOrder)
+                        {
+                            ListOrderDetail[keyItem - 1].ChangeStatus = 3;
+                        }
+                    }
+                            
                     else
                         ListOrderDetail[keyItem - 1].ChangeStatus = 1;
                 }

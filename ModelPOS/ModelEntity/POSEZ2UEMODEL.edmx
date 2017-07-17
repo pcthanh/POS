@@ -460,6 +460,8 @@
           <Property Name="UpdateBy" Type="int" />
           <Property Name="UpdateDate" Type="datetime" />
           <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="Category" Type="int" />
+          <Property Name="ItemTKA" Type="int" />
         </EntityType>
         <EntityType Name="ORDER_DETAIL_DATE">
           <Key>
@@ -482,6 +484,8 @@
           <Property Name="UpdateBy" Type="int" />
           <Property Name="UpdateDate" Type="datetime" />
           <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="Category" Type="int" />
+          <Property Name="ItemTKA" Type="int" />
         </EntityType>
         <EntityType Name="ORDER_DETAIL_MODIFIRE">
           <Key>
@@ -2163,6 +2167,8 @@ warning 6002: The table/view 'VyVyCabra.dbo.view_report_invoice' does not have a
           <Property Name="UpdateBy" Type="Int32" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="Int32" />
+          <Property Name="ItemTKA" Type="Int32" />
         </EntityType>
         <EntityType Name="ORDER_DETAIL_DATE">
           <Key>
@@ -2185,6 +2191,8 @@ warning 6002: The table/view 'VyVyCabra.dbo.view_report_invoice' does not have a
           <Property Name="UpdateBy" Type="Int32" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="Int32" />
+          <Property Name="ItemTKA" Type="Int32" />
         </EntityType>
         <EntityType Name="ORDER_DETAIL_MODIFIRE">
           <Key>
@@ -3387,6 +3395,8 @@ warning 6002: The table/view 'VyVyCabra.dbo.view_report_invoice' does not have a
           <EntitySetMapping Name="ORDER_DETAIL">
             <EntityTypeMapping TypeName="POSEZ2UModel.ORDER_DETAIL">
               <MappingFragment StoreEntitySet="ORDER_DETAIL">
+                <ScalarProperty Name="ItemTKA" ColumnName="ItemTKA" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
@@ -3411,6 +3421,8 @@ warning 6002: The table/view 'VyVyCabra.dbo.view_report_invoice' does not have a
           <EntitySetMapping Name="ORDER_DETAIL_DATE">
             <EntityTypeMapping TypeName="POSEZ2UModel.ORDER_DETAIL_DATE">
               <MappingFragment StoreEntitySet="ORDER_DETAIL_DATE">
+                <ScalarProperty Name="ItemTKA" ColumnName="ItemTKA" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />

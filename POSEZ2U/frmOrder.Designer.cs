@@ -555,7 +555,6 @@
             this.ucNote.Name = "ucNote";
             this.ucNote.Size = new System.Drawing.Size(74, 65);
             this.ucNote.TabIndex = 8;
-            this.ucNote.Visible = false;
             this.ucNote.Load += new System.EventHandler(this.ucNote_Load);
             this.ucNote.Click += new System.EventHandler(this.btnNote_Click);
             // 

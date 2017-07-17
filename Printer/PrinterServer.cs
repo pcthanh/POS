@@ -287,7 +287,10 @@ namespace Printer
                        
 
                                countItem++;
-                               l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
+                       if(Order.ListOrderDetail[i].ItemTKA==1)        
+                        l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName+"-TKA", e, new Font("Arial", 14), l_y, 1, false);
+                       else
+                           l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
                         
 
                        if (Order.ListOrderDetail[i].ListOrderDetailModifire.Count > 0)
@@ -323,15 +326,20 @@ namespace Printer
                        l_y = posPrinter.DrawString("OPERATOR#" + OrderMain.UserName, e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
                        posPrinter.DrawString("Table# " + OrderMain.FloorID, e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
                        l_y = posPrinter.DrawString("Order#" + OrderMain.OrderID, e, new Font("Arial", 14), l_y, 3, false);
-                       posPrinter.DrawString("ADD", e, new Font("Arial", 14, FontStyle.Italic), l_y, 2, false);
+                       l_y += posPrinter.GetHeightPrinterLine() / 10;
                        posPrinter.DrawLine("", new Font("Arial", 14), e, System.Drawing.Drawing2D.DashStyle.Dot, l_y, 1);
+                       posPrinter.DrawString("ADD", e, new Font("Arial", 14, FontStyle.Italic), l_y, 2, false);
+                       l_y += posPrinter.GetHeightPrinterLine() / 10;
                        l_y += posPrinter.GetHeightPrinterLine() / 10;
                        for (int i = 0; i < Order.ListOrderDetail.Count; i++)
                        {
                            if (Order.ListOrderDetail[i].ChangeStatus == 1 )
                            {
 
-                               l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
+                               if(Order.ListOrderDetail[i].ItemTKA==1)
+                                    l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " +Order.ListOrderDetail[i].ProductName+"-TKA", e, new Font("Arial", 14), l_y, 1, false);
+                               else
+                                   l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
                            }
                            if (Order.ListOrderDetail[i].ListOrderDetailModifire.Count > 0)
                            {
@@ -361,15 +369,20 @@ namespace Printer
                        l_y = posPrinter.DrawString("OPERATOR#" + OrderMain.UserName, e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
                        posPrinter.DrawString("Table# " + OrderMain.FloorID, e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
                        l_y = posPrinter.DrawString("Order#" + OrderMain.OrderID, e, new Font("Arial", 14), l_y, 3, false);
-                       posPrinter.DrawString("REMOVE", e, new Font("Arial", 14, FontStyle.Italic), l_y, 2, false);
+                       l_y += posPrinter.GetHeightPrinterLine() / 10;
                        posPrinter.DrawLine("", new Font("Arial", 14), e, System.Drawing.Drawing2D.DashStyle.Dot, l_y, 1);
+                       posPrinter.DrawString("REMOVE", e, new Font("Arial", 14, FontStyle.Italic), l_y, 2, false);
+                       l_y += posPrinter.GetHeightPrinterLine() / 10;
                        l_y += posPrinter.GetHeightPrinterLine() / 10;
                        for (int i = 0; i < Order.ListOrderDetail.Count; i++)
                        {
                            float yStart = l_y;
                            if (Order.ListOrderDetail[i].ChangeStatus == 2)
                            {
-                               l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
+                               if(Order.ListOrderDetail[i].ItemTKA==1)
+                                    l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName+"-TKA", e, new Font("Arial", 14), l_y, 1, false);
+                               else
+                                   l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
                                posPrinter.DrawCancelLine(e, yStart, l_y);
                            }
                            if (Order.ListOrderDetail[i].ListOrderDetailModifire.Count > 0)
@@ -409,8 +422,10 @@ namespace Printer
                {
                      
                            countItem++;
-                           l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
-
+                   if(Order.ListOrderDetail[i].ItemTKA==1)        
+                        l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " +Order.ListOrderDetail[i].ProductName+"-TKA", e, new Font("Arial", 14), l_y, 1, false);
+                   else
+                       l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
                    if (Order.ListOrderDetail[i].ListOrderDetailModifire.Count > 0)
                    {
                        for (int j = 0; j < Order.ListOrderDetail[i].ListOrderDetailModifire.Count; j++)
@@ -458,7 +473,10 @@ namespace Printer
            for (int i = 0; i < OrderMain.ListOrderDetail.Count; i++)
            {
                float yStart = l_y;
-               posPrinter.DrawString(OrderMain.ListOrderDetail[i].ProductName, e, new Font("Arial", 10, FontStyle.Bold), l_y, 1, false);
+               if(OrderMain.ListOrderDetail[i].ItemTKA==1)
+                    posPrinter.DrawString(OrderMain.ListOrderDetail[i].ProductName+"-TKA", e, new Font("Arial", 10, FontStyle.Bold), l_y, 1, true);
+               else
+                    posPrinter.DrawString(OrderMain.ListOrderDetail[i].ProductName, e, new Font("Arial", 10, FontStyle.Bold), l_y, 1, true);
                l_y = posPrinter.DrawString(OrderMain.ListOrderDetail[i].Qty.ToString(), e, new Font("Arial", 10, FontStyle.Bold), l_y, 2, false);
                posPrinter.DrawString("$" + money.Format2(OrderMain.ListOrderDetail[i].Price.ToString()), e, new Font("Arial", 10, FontStyle.Bold), yStart, 3, false);
                if (OrderMain.ListOrderDetail[i].ListOrderDetailModifire.Count > 0)
@@ -467,6 +485,10 @@ namespace Printer
                    {
                        l_y = posPrinter.DrawString("__" + OrderMain.ListOrderDetail[i].ListOrderDetailModifire[j].ModifireName, e, new Font("Arial", 10), l_y, 1, false);
                    }
+               }
+               if (e.Graphics.MeasureString(OrderMain.ListOrderDetail[i].ProductName, new Font("Arial", 10, FontStyle.Bold)).Width > (float)Math.Abs(e.PageBounds.Width - 173))
+               {
+                   l_y += posPrinter.GetHeightPrinterLine() / 6;
                }
            }
            l_y += posPrinter.GetHeightPrinterLine() / 10;
@@ -556,6 +578,11 @@ namespace Printer
                        l_y=posPrinter.DrawString("__"+OrderMain.ListOrderDetail[i].ListOrderDetailModifire[j].ModifireName, e, new Font("Arial", 10), l_y, 1,false);
                    }
                }
+               if (e.Graphics.MeasureString(OrderMain.ListOrderDetail[i].ProductName, new Font("Arial", 10, FontStyle.Bold)).Width > (float)Math.Abs(e.PageBounds.Width - 173))
+               {
+                   l_y += posPrinter.GetHeightPrinterLine() / 6;
+               }
+
            }
            l_y += posPrinter.GetHeightPrinterLine() / 10;
            posPrinter.DrawLine("", new Font("Arial", 14), e, System.Drawing.Drawing2D.DashStyle.Dot, l_y, 1);
@@ -639,7 +666,10 @@ namespace Printer
            for (int i = 0; i < OrderMain.ListOrderDetail.Count; i++)
            {
                float yStart = l_y;
-               posPrinter.DrawString(OrderMain.ListOrderDetail[i].ProductName, e, new Font("Arial", 10, FontStyle.Bold), l_y, 1, true);
+               if(OrderMain.ListOrderDetail[i].ItemTKA==1)
+                    posPrinter.DrawString(OrderMain.ListOrderDetail[i].ProductName+"-TKA", e, new Font("Arial", 10, FontStyle.Bold), l_y, 1, true);
+               else
+                   posPrinter.DrawString(OrderMain.ListOrderDetail[i].ProductName, e, new Font("Arial", 10, FontStyle.Bold), l_y, 1, true);
                l_y = posPrinter.DrawString(OrderMain.ListOrderDetail[i].Qty.ToString(), e, new Font("Arial", 10, FontStyle.Bold), l_y, 2, false);
                posPrinter.DrawString("$" + money.Format2(OrderMain.ListOrderDetail[i].Price.ToString()), e, new Font("Arial", 10, FontStyle.Bold), yStart, 3, false);
                if (OrderMain.ListOrderDetail[i].ListOrderDetailModifire.Count > 0)

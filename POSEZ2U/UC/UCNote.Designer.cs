@@ -87,7 +87,7 @@
             this.lblNote.Name = "lblNote";
             this.lblNote.Size = new System.Drawing.Size(68, 25);
             this.lblNote.TabIndex = 0;
-            this.lblNote.Text = "NOTE";
+            this.lblNote.Text = "SET TKA";
             this.lblNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNote.Click += new System.EventHandler(this.UCNote_Click);
             // 
