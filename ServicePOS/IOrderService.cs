@@ -27,7 +27,8 @@ namespace ServicePOS
        int JoinTable(List<OrderJoinTableModel> lstOrderJoin);
        int DeleteJoinTableAll(OrderDateModel itemOrder);
        int VoidItemHistory(OrderDateModel OrderVoid);
-       IEnumerable<OrderDateModel> GetPrevOrder();
+       IEnumerable<OrderDateModel> GetPrevOrder(int Page);
+       IEnumerable<OrderDateModel> GetPrevOrderTotalPages();
        OrderDateModel GetListOrderPrevOrder(string idTable, int idOrder,DateTime ts);
        int CancelOrder(OrderDateModel Order);
        int LastDynID();

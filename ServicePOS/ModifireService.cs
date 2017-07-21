@@ -193,7 +193,19 @@ namespace ServicePOS
         #region
         public IEnumerable<ModifireModel> GetListModifireToProduct(int productID)
         {
-            var data = _context.Database.SqlQuery<ModifireModel>("pos_th_GetListModifireToProduct @productID", new SqlParameter("productID", productID));
+            //var data = _context.Database.SqlQuery<ModifireModel>("pos_th_GetListModifireToProduct @productID", new SqlParameter("productID", productID));
+            //return data;
+            var data = _context.MAP_MODIFIRE_TO_PRODUCT.Join(_context.MODIFIREs, map => map.ModifireID, modi => modi.ModifireID, (map, modi) => new { map, modi })
+               .Join(_context.MODIFIRE_PRICE, maping => maping.modi.ModifireID, price => price.ModifireID, (mapping, price) => new { mapping, price })
+               .Where(x => x.mapping.map.ProductID == productID && x.mapping.map.ModifireID == x.mapping.modi.ModifireID && x.price.ModifireID == x.mapping.modi.ModifireID && x.mapping.map.Status==1)
+               .Select(x => new ModifireModel
+               {
+                   ModifireID = x.mapping.modi.ModifireID,
+                   CurrentPrice = x.price.CurrentPrice,
+                   ModifireName = x.mapping.modi.ModifireName,
+                   Color = x.mapping.modi.Color
+               }
+               ).ToList();
             return data;
         }
         #endregion
@@ -272,7 +284,7 @@ namespace ServicePOS
            // return data;
             var data = _context.MAP_MODIFIRE_TO_PRODUCT.Join(_context.MODIFIREs, map => map.ModifireID, modi => modi.ModifireID, (map, modi) => new { map, modi })
                 .Join(_context.MODIFIRE_PRICE, maping => maping.modi.ModifireID, price => price.ModifireID, (mapping, price) => new { mapping, price })
-                .Where(x => x.mapping.map.ProductID == productID && x.mapping.map.ModifireID == x.mapping.modi.ModifireID && x.price.ModifireID == x.mapping.modi.ModifireID && x.mapping.modi.Status == 1)
+                .Where(x => x.mapping.map.ProductID == productID && x.mapping.map.ModifireID == x.mapping.modi.ModifireID && x.price.ModifireID == x.mapping.modi.ModifireID && x.mapping.map.Status==1)
                 .Select(x => new ModifireModel
                 {
                     ModifireID = x.mapping.modi.ModifireID,
@@ -307,6 +319,12 @@ namespace ServicePOS
             {
                 return 0;
             }
+        }
+
+
+        public IEnumerable<ModifireModel> GetModifireTotakList()
+        {
+            throw new NotImplementedException();
         }
     }
 }

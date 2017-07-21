@@ -920,7 +920,7 @@ namespace ServicePOS
 
 
 
-        public IEnumerable<OrderDateModel> GetPrevOrder()
+        public IEnumerable<OrderDateModel> GetPrevOrder(int Page)
         {
             var listPrev = _context.ORDER_DATE.Where(x => x.Status == 1)
                 .Select(x => new OrderDateModel
@@ -935,7 +935,7 @@ namespace ServicePOS
                     UpdateDate = x.UpdateDate,
                     Status = x.Status
                 }
-                );
+                ).OrderBy(x => x.OrderID).Skip(24 * (Page - 1)).Take(24).ToList();;
             return listPrev;
         }
 
@@ -1196,6 +1196,26 @@ namespace ServicePOS
         public string GetOrderNumber()
         {
             return OrderNumberTemp;
+        }
+
+
+        public IEnumerable<OrderDateModel> GetPrevOrderTotalPages()
+        {
+            var listPrev = _context.ORDER_DATE.Where(x => x.Status == 1)
+               .Select(x => new OrderDateModel
+               {
+                   OrderID = x.OrderID,
+                   TotalAmount = x.TotalAmount,
+                   ShiftID = x.ShiftID ?? 0,
+                   ClientID = x.ClientID,
+                   CreateBy = x.CreateBy,
+                   CreateDate = x.CreateDate,
+                   UpdateBy = x.UpdateBy,
+                   UpdateDate = x.UpdateDate,
+                   Status = x.Status
+               }
+               );
+            return listPrev;
         }
     }
 }
