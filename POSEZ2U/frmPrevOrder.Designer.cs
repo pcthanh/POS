@@ -31,14 +31,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.flpPrevOrder = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.flpPrevOrder = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.bntNext = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,7 +63,7 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(0, 0);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(201, 43);
+            this.btnCancel.Size = new System.Drawing.Size(195, 43);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -79,29 +83,23 @@
             this.panel2.Size = new System.Drawing.Size(717, 523);
             this.panel2.TabIndex = 1;
             // 
-            // flpPrevOrder
+            // panel7
             // 
-            this.flpPrevOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpPrevOrder.Location = new System.Drawing.Point(0, 0);
-            this.flpPrevOrder.Name = "flpPrevOrder";
-            this.flpPrevOrder.Size = new System.Drawing.Size(717, 523);
-            this.flpPrevOrder.TabIndex = 0;
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(10, 470);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(697, 10);
+            this.panel7.TabIndex = 5;
             // 
-            // panel3
+            // panel6
             // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(717, 10);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 10);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 513);
-            this.panel4.TabIndex = 2;
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.btnCancel);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(10, 480);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(697, 43);
+            this.panel6.TabIndex = 4;
             // 
             // panel5
             // 
@@ -111,22 +109,71 @@
             this.panel5.Size = new System.Drawing.Size(10, 513);
             this.panel5.TabIndex = 3;
             // 
-            // panel6
+            // panel4
             // 
-            this.panel6.Controls.Add(this.btnCancel);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(10, 480);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(697, 43);
-            this.panel6.TabIndex = 4;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 10);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 513);
+            this.panel4.TabIndex = 2;
             // 
-            // panel7
+            // panel3
             // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(10, 470);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(697, 10);
-            this.panel7.TabIndex = 5;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(717, 10);
+            this.panel3.TabIndex = 1;
+            // 
+            // flpPrevOrder
+            // 
+            this.flpPrevOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpPrevOrder.Location = new System.Drawing.Point(0, 0);
+            this.flpPrevOrder.Name = "flpPrevOrder";
+            this.flpPrevOrder.Size = new System.Drawing.Size(717, 523);
+            this.flpPrevOrder.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.bntNext);
+            this.panel8.Controls.Add(this.btnBack);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(195, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(502, 43);
+            this.panel8.TabIndex = 1;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(164, 43);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "BACK";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // bntNext
+            // 
+            this.bntNext.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.bntNext.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bntNext.FlatAppearance.BorderSize = 0;
+            this.bntNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntNext.ForeColor = System.Drawing.Color.White;
+            this.bntNext.Location = new System.Drawing.Point(164, 0);
+            this.bntNext.Name = "bntNext";
+            this.bntNext.Size = new System.Drawing.Size(146, 43);
+            this.bntNext.TabIndex = 1;
+            this.bntNext.Text = "NEXT";
+            this.bntNext.UseVisualStyleBackColor = false;
+            this.bntNext.Click += new System.EventHandler(this.bntNext_Click);
             // 
             // frmPrevOrder
             // 
@@ -143,6 +190,7 @@
             this.Load += new System.EventHandler(this.frmPrevOrder_Load);
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -158,5 +206,8 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button bntNext;
     }
 }

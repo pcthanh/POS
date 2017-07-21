@@ -218,7 +218,6 @@ namespace POSEZ2U
             btnOpenItemSubItem.ForeColor = Color.FromArgb(255, 255, 255);
             btnOpenItemSubItem.FlatAppearance.BorderSize = 0;
             btnOpenItemSubItem.FlatStyle = FlatStyle.Flat;
-            btnOpenItemSubItem.FlatStyle = FlatStyle.Flat;
             var margin = btnOpenItemSubItem.Margin;
             margin.All = 1;
             btnOpenItemSubItem.Margin = margin;
@@ -276,53 +275,87 @@ namespace POSEZ2U
         }
         private void AddButtonBackSubItemPage()
         {
-            Button btnBackSubItemPage = new Button();
-            btnBackSubItemPage.Width = 137;
-            btnBackSubItemPage.Height = 68;
-            btnBackSubItemPage.Name = "btnOpenItem";
-            btnBackSubItemPage.Text = "BACK";
-            btnBackSubItemPage.TextAlign = ContentAlignment.MiddleCenter;
-            btnBackSubItemPage.BackColor = Color.FromArgb(228, 228, 228);
-            btnBackSubItemPage.ForeColor = Color.FromArgb(13, 13, 13);
-            btnBackSubItemPage.FlatAppearance.BorderSize = 0;
-            btnBackSubItemPage.FlatStyle = FlatStyle.Flat;
-
-            btnBackSubItemPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnBackSubItemPage.Click += btnBackSubItemPage_Click;
-            flowLayoutPanel1.Controls.Add(btnBackSubItemPage);
+            //Button btnBackSubItemPage = new Button();
+            //btnBackSubItemPage.Width = 137;
+            //btnBackSubItemPage.Height = 68;
+            //btnBackSubItemPage.Name = "btnBackSubItem";
+            //btnBackSubItemPage.Text = "BACK";
+            //btnBackSubItemPage.TextAlign = ContentAlignment.MiddleCenter;
+            //btnBackSubItemPage.BackColor = Color.FromArgb(228, 228, 228);
+            //btnBackSubItemPage.ForeColor = Color.FromArgb(13, 13, 13);
+            //btnBackSubItemPage.FlatAppearance.BorderSize = 0;
+            //btnBackSubItemPage.FlatStyle = FlatStyle.Flat;
+            //var margin = btnBackSubItemPage.Margin;
+            //margin.All = 0;
+            //var padding = btnBackSubItemPage.Padding;
+            //padding.All = 1;
+            //btnBackSubItemPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Button btnOpenItemSubItem = new Button();
+            btnOpenItemSubItem.Width = 137;
+            btnOpenItemSubItem.Height = 68;
+            btnOpenItemSubItem.Name = "btnOpenItem";
+            btnOpenItemSubItem.Text = "BACK";
+            btnOpenItemSubItem.BackColor = Color.FromArgb(228, 228, 228);
+            btnOpenItemSubItem.ForeColor = Color.FromArgb(13, 13, 13);
+            btnOpenItemSubItem.FlatAppearance.BorderSize = 0;
+            btnOpenItemSubItem.FlatStyle = FlatStyle.Flat;
+            var margin = btnOpenItemSubItem.Margin;
+            margin.All = 1;
+            btnOpenItemSubItem.Margin = margin;
+            btnOpenItemSubItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnOpenItemSubItem.Click += btnBackSubItemPage_Click;
+            flowLayoutPanel1.Controls.Add(btnOpenItemSubItem);
         }
 
         void btnBackSubItemPage_Click(object sender, EventArgs e)
         {
             if (this.CurrentPageIndexModi > 1)
             {
-                CurrentPageIndexModi--;
-                LoadModifrieOfMenu(CurrentPageIndex);
+                this.CurrentPageIndexModi--;
+                LoadModifrieOfMenu(CurrentPageIndexModi);
             }
         }
         private void AddButtonNextSubItemPage()
         {
-            Button btnNextSubItemPage = new Button();
-            btnNextSubItemPage.Width = 137;
-            btnNextSubItemPage.Height = 68;
-            btnNextSubItemPage.Name = "btnOpenItem";
-            btnNextSubItemPage.Text = "NEXT";
-            btnNextSubItemPage.TextAlign = ContentAlignment.MiddleCenter;
-            btnNextSubItemPage.BackColor = Color.FromArgb(228, 228, 228);
-            btnNextSubItemPage.ForeColor = Color.FromArgb(13, 13, 13);
-            btnNextSubItemPage.FlatAppearance.BorderSize = 0;
-            btnNextSubItemPage.FlatStyle = FlatStyle.Flat;
-
-            btnNextSubItemPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnNextSubItemPage.Click += btnNextSubItemPage_Click;
-            flowLayoutPanel1.Controls.Add(btnNextSubItemPage);
+            //Button btnNextSubItemPage = new Button();
+            //btnNextSubItemPage.Width = 137;
+            //btnNextSubItemPage.Height = 68;
+            //btnNextSubItemPage.Name = "btnOpenItem";
+            //btnNextSubItemPage.Text = "NEXT";
+            //btnNextSubItemPage.TextAlign = ContentAlignment.MiddleCenter;
+            //btnNextSubItemPage.BackColor = Color.FromArgb(228, 228, 228);
+            //btnNextSubItemPage.ForeColor = Color.FromArgb(13, 13, 13);
+            //btnNextSubItemPage.FlatAppearance.BorderSize = 0;
+            //btnNextSubItemPage.FlatStyle = FlatStyle.Flat;
+            //var margin = btnNextSubItemPage.Margin;
+            //margin.All = 1;
+            //var padding = btnNextSubItemPage.Padding;
+            //padding.All = 1;
+            //btnNextSubItemPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Button btnOpenItemSubItem = new Button();
+            btnOpenItemSubItem.Width = 137;
+            btnOpenItemSubItem.Height = 68;
+            btnOpenItemSubItem.Name = "btnOpenItem";
+            btnOpenItemSubItem.Text = "NEXT";
+            btnOpenItemSubItem.BackColor = Color.FromArgb(228, 228, 228);
+            btnOpenItemSubItem.ForeColor = Color.FromArgb(13, 13, 13);
+            btnOpenItemSubItem.FlatAppearance.BorderSize = 0;
+            btnOpenItemSubItem.FlatStyle = FlatStyle.Flat;
+            var margin = btnOpenItemSubItem.Margin;
+            margin.All = 1;
+            btnOpenItemSubItem.Margin = margin;
+            btnOpenItemSubItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnOpenItemSubItem.Click += btnNextSubItemPage_Click;
+            flowLayoutPanel1.Controls.Add(btnOpenItemSubItem);
         }
 
         void btnNextSubItemPage_Click(object sender, EventArgs e)
         {
-            if (this.CurrentPageIndexModi < this.TotalPageModi)
+            CalculateTotalPagesModi(1);
+            if (this.CurrentPageIndexModi <= this.TotalPageModi)
             {
-                CurrentPageIndexModi++;
+                //CurrentPageIndexModi++;
+               
                 LoadModifrieOfMenu(CurrentPageIndexModi);
             }
         }
@@ -374,12 +407,16 @@ namespace POSEZ2U
 
         private void CalculateTotalPagesModi(int rowCount)
         {
-
-            this.TotalPageModi = rowCount / PgSizeModi;
-            if (rowCount % PgSizeModi > 0) // if remainder is more than  zero 
+            var totalModifier = ModifireService.GetListModifireToProduct(ItemMain.ProductID);
+            this.TotalPageModi = (int)Math.Ceiling(totalModifier.Count() / (decimal)PgSizeModi);
+            if (CurrentPageIndexModi <= this.TotalPageModi)
             {
-                this.TotalPageModi += 1;
+                CurrentPageIndexModi = CurrentPageIndexModi + 1;
             }
+            //if (rowCount % PgSizeModi > 0) // if remainder is more than  zero 
+            //{
+            //    this.TotalPageModi += 1;
+            //}
         }
         void btnNextItem_Click(object sender, EventArgs e)
         {
@@ -603,7 +640,7 @@ namespace POSEZ2U
                     ucModifierOfMenu.Click += ucModifierOfMenu_Click;
                     flowLayoutPanel1.Controls.Add(ucModifierOfMenu);
                 }
-                CalculateTotalPagesModi(Row);
+                
                 this.AddButtonOpenItemSubItem();
                 this.AddButtonBackSubItemPage();
                 this.AddButtonNextSubItemPage();

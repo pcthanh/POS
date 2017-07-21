@@ -22,6 +22,9 @@ namespace POSEZ2U
         }
         POSEZ2U.Class.MoneyFortmat money = new Class.MoneyFortmat(POSEZ2U.Class.MoneyFortmat.AU_TYPE);
         public int OrderID;
+        int currenPage = 1;
+        int totalPages = 0;
+        int pageSize = 24;
         private IOrderService _orderService;
         private IOrderService OrderService
         {
@@ -32,7 +35,8 @@ namespace POSEZ2U
         {
             try
             {
-                var list = OrderService.GetPrevOrder();
+                flpPrevOrder.Controls.Clear();
+                var list = OrderService.GetPrevOrder(currenPage);
                 foreach (OrderDateModel Order in list)
                 {
                     UCPrevOrder ucPrev = new UCPrevOrder();
@@ -66,12 +70,44 @@ namespace POSEZ2U
          
         private void frmPrevOrder_Load(object sender, EventArgs e)
         {
+            this.TotalPage();
             this.LoadPrevOrder();
+        }
+        private void TotalPage()
+        {
+            try
+            {
+                var data = OrderService.GetPrevOrderTotalPages();
+                totalPages =(int) Math.Ceiling(data.Count() / (decimal)pageSize);
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+        }
+
+        private void bntNext_Click(object sender, EventArgs e)
+        {
+            if (currenPage < totalPages)
+            {
+                currenPage += 1;
+                this.LoadPrevOrder();
+
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            if (currenPage > 1)
+            {
+                currenPage = currenPage - 1;
+                this.LoadPrevOrder();
+            }
         }
     }
 }

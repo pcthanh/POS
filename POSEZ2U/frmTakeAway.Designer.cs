@@ -31,10 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTakeAway));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ucInfoTop1 = new POSEZ2U.UC.UCInfoTop();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.btnQickOrder = new System.Windows.Forms.Button();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -55,15 +57,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.ucTkItemTitle1 = new POSEZ2U.UC.UCTkItemTitle();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.flpTkAInfor = new System.Windows.Forms.FlowLayoutPanel();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnQickOrder = new System.Windows.Forms.Button();
             this.ucTakeAwayTitle1 = new POSEZ2U.UC.UcTakeAwayTitle();
-            this.ucTkItemTitle1 = new POSEZ2U.UC.UCTkItemTitle();
-            this.ucInfoTop1 = new POSEZ2U.UC.UCInfoTop();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -86,6 +86,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(936, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // ucInfoTop1
+            // 
+            this.ucInfoTop1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucInfoTop1.Location = new System.Drawing.Point(0, 0);
+            this.ucInfoTop1.Name = "ucInfoTop1";
+            this.ucInfoTop1.Size = new System.Drawing.Size(936, 45);
+            this.ucInfoTop1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -130,6 +138,22 @@
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(579, 40);
             this.panel17.TabIndex = 2;
+            // 
+            // btnQickOrder
+            // 
+            this.btnQickOrder.BackColor = System.Drawing.Color.Blue;
+            this.btnQickOrder.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnQickOrder.FlatAppearance.BorderSize = 0;
+            this.btnQickOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQickOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQickOrder.ForeColor = System.Drawing.Color.White;
+            this.btnQickOrder.Location = new System.Drawing.Point(311, 0);
+            this.btnQickOrder.Name = "btnQickOrder";
+            this.btnQickOrder.Size = new System.Drawing.Size(119, 40);
+            this.btnQickOrder.TabIndex = 2;
+            this.btnQickOrder.Text = "Quick Order";
+            this.btnQickOrder.UseVisualStyleBackColor = false;
+            this.btnQickOrder.Click += new System.EventHandler(this.btnQickOrder_Click);
             // 
             // btnSearchCustomer
             // 
@@ -349,6 +373,15 @@
             this.panel19.Size = new System.Drawing.Size(327, 36);
             this.panel19.TabIndex = 0;
             // 
+            // ucTkItemTitle1
+            // 
+            this.ucTkItemTitle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            this.ucTkItemTitle1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTkItemTitle1.Location = new System.Drawing.Point(0, 0);
+            this.ucTkItemTitle1.Name = "ucTkItemTitle1";
+            this.ucTkItemTitle1.Size = new System.Drawing.Size(327, 36);
+            this.ucTkItemTitle1.TabIndex = 0;
+            // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
@@ -370,6 +403,7 @@
             // 
             // flpTkAInfor
             // 
+            this.flpTkAInfor.AutoScroll = true;
             this.flpTkAInfor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpTkAInfor.Location = new System.Drawing.Point(0, 36);
             this.flpTkAInfor.Name = "flpTkAInfor";
@@ -385,27 +419,6 @@
             this.panel18.Size = new System.Drawing.Size(579, 36);
             this.panel18.TabIndex = 0;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnQickOrder
-            // 
-            this.btnQickOrder.BackColor = System.Drawing.Color.Blue;
-            this.btnQickOrder.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnQickOrder.FlatAppearance.BorderSize = 0;
-            this.btnQickOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQickOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQickOrder.ForeColor = System.Drawing.Color.White;
-            this.btnQickOrder.Location = new System.Drawing.Point(311, 0);
-            this.btnQickOrder.Name = "btnQickOrder";
-            this.btnQickOrder.Size = new System.Drawing.Size(119, 40);
-            this.btnQickOrder.TabIndex = 2;
-            this.btnQickOrder.Text = "Quick Order";
-            this.btnQickOrder.UseVisualStyleBackColor = false;
-            this.btnQickOrder.Click += new System.EventHandler(this.btnQickOrder_Click);
-            // 
             // ucTakeAwayTitle1
             // 
             this.ucTakeAwayTitle1.BackColor = System.Drawing.Color.Black;
@@ -415,22 +428,10 @@
             this.ucTakeAwayTitle1.Size = new System.Drawing.Size(579, 36);
             this.ucTakeAwayTitle1.TabIndex = 0;
             // 
-            // ucTkItemTitle1
+            // timer1
             // 
-            this.ucTkItemTitle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
-            this.ucTkItemTitle1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucTkItemTitle1.Location = new System.Drawing.Point(0, 0);
-            this.ucTkItemTitle1.Name = "ucTkItemTitle1";
-            this.ucTkItemTitle1.Size = new System.Drawing.Size(327, 36);
-            this.ucTkItemTitle1.TabIndex = 0;
-            // 
-            // ucInfoTop1
-            // 
-            this.ucInfoTop1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucInfoTop1.Location = new System.Drawing.Point(0, 0);
-            this.ucInfoTop1.Name = "ucInfoTop1";
-            this.ucInfoTop1.Size = new System.Drawing.Size(936, 45);
-            this.ucInfoTop1.TabIndex = 0;
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmTakeAway
             // 
