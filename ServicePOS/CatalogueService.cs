@@ -348,16 +348,17 @@ namespace ServicePOS
 
             var data = _context.MAP_PRODUCT_TO_CATEGORY.Join(_context.PRODUCTs, cate => cate.ProductID,
                 pro => pro.ProductID, (cate, pro) => new { cate, pro })
-                .Where(x => x.cate.CategoryID == CategoryID && x.cate.Status == 1)
+                .Where(x => x.cate.CategoryID == CategoryID && x.cate.Status == 1 )
                 .Select(x => new ProductionModel()
                 {
                     ProductID = x.cate.ProductID,
                     CategoryID = x.cate.CategoryID,
                     ProductNameDesc = x.pro.ProductNameDesc,
                     ProductNameSort = x.pro.ProductNameSort,
-                    Status = x.pro.Status
+                    Status = x.pro.Status,
+                    Position= x.pro.Position??-1,
 
-                }).OrderBy(p => p.ProductNameDesc).Skip(10 * (CurrentPage - 1))
+                }).OrderBy(p => p.Position).Skip(10 * (CurrentPage - 1))
             .Take(10).ToList(); 
             return data;
         }
@@ -374,9 +375,9 @@ namespace ServicePOS
                     CategoryID = x.cate.CategoryID,
                     ProductNameDesc = x.pro.ProductNameDesc,
                     ProductNameSort = x.pro.ProductNameSort,
-                    Status = x.pro.Status
-
-                });
+                    Status = x.pro.Status,
+                    Position=x.pro.Position??-1,
+                }).OrderBy(p=>p.Position);
 
             return data;
         }

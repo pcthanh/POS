@@ -19,5 +19,6 @@ namespace ServicePOS.Model
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<double> CurrentPrice { get; set; }
         public Nullable<double> WasPrice { get; set; }
+        public int Position { get; set; }
     }
 }

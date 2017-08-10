@@ -283,17 +283,17 @@ namespace POSEZ2U
         public void printJoinTable(string JoinTable, PrintPageEventArgs e)
         {
             float l_y = 0;
-            l_y = posPrinter.DrawString(Header, e, new Font("Arial", 14, FontStyle.Italic), l_y, 2, false);
+            l_y = posPrinter.DrawString(Header, e, new Font("Arial", 14, FontStyle.Italic), l_y, 2, false, false);
             l_y += posPrinter.GetHeightPrinterLine() / 10;
             l_y = posPrinter.DrawLine("", new Font("Arial", 14), e, System.Drawing.Drawing2D.DashStyle.Dot, l_y, 1);
-            l_y = posPrinter.DrawString(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(), e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
+            l_y = posPrinter.DrawString(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(), e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false, false);
             l_y += posPrinter.GetHeightPrinterLine() / 10;
-            l_y = posPrinter.DrawString("OPERATOR#MANAGER", e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
-            l_y = posPrinter.DrawString(JoinTable, e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
+            l_y = posPrinter.DrawString("OPERATOR#MANAGER", e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false, false);
+            l_y = posPrinter.DrawString(JoinTable, e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false, false);
             l_y += posPrinter.GetHeightPrinterLine() / 2;
-            l_y = posPrinter.DrawString("www.bires.com.au", e, new Font("Arial", 10), l_y, 2, false);
-            l_y = posPrinter.DrawString("Eat.Drink.Laugh-A touch of Laos", e, new Font("Arial", 10), l_y, 2, false);
-            l_y = posPrinter.DrawString("Thank you,see you soon", e, new Font("Arial", 10), l_y, 2, false);
+            l_y = posPrinter.DrawString("www.bires.com.au", e, new Font("Arial", 10), l_y, 2, false, false);
+            l_y = posPrinter.DrawString("Eat.Drink.Laugh-A touch of Laos", e, new Font("Arial", 10), l_y, 2, false, false);
+            l_y = posPrinter.DrawString("Thank you,see you soon", e, new Font("Arial", 10), l_y, 2, false, false);
 
         }
         private void GetListPrinter()

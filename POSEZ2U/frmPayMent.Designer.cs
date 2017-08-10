@@ -181,6 +181,7 @@
             // 
             this.btnCashOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnCashOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCashOut.Enabled = false;
             this.btnCashOut.FlatAppearance.BorderSize = 0;
             this.btnCashOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCashOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -198,6 +199,7 @@
             // 
             this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnPrint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrint.Enabled = false;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -232,6 +234,7 @@
             // 
             this.btnSplitBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnSplitBill.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSplitBill.Enabled = false;
             this.btnSplitBill.FlatAppearance.BorderSize = 0;
             this.btnSplitBill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSplitBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

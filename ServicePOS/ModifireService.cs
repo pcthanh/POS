@@ -203,9 +203,10 @@ namespace ServicePOS
                    ModifireID = x.mapping.modi.ModifireID,
                    CurrentPrice = x.price.CurrentPrice,
                    ModifireName = x.mapping.modi.ModifireName,
-                   Color = x.mapping.modi.Color
+                   Color = x.mapping.modi.Color,
+                   Position=x.mapping.modi.Position??-1
                }
-               ).ToList();
+               ).OrderBy(p=>p.Position).ToList();
             return data;
         }
         #endregion
@@ -213,8 +214,21 @@ namespace ServicePOS
         #region
         public IEnumerable<ModifireModel> GetListModifireToProduct(int productID, int CurrentPage)
         {
-            var data = _context.Database.SqlQuery<ModifireModel>("pos_th_GetListModifireToProduct @productID", new SqlParameter("productID", productID))
-                .OrderBy(x => x.ModifireName).Skip(10 * (CurrentPage - 1)).Take(10).ToList();
+            //var data = _context.Database.SqlQuery<ModifireModel>("pos_th_GetListModifireToProduct @productID", new SqlParameter("productID", productID))
+            //    .OrderBy(x => x.ModifireName).Skip(10 * (CurrentPage - 1)).Take(10).ToList();
+            //return data;
+            var data = _context.MAP_MODIFIRE_TO_PRODUCT.Join(_context.MODIFIREs, map => map.ModifireID, modi => modi.ModifireID, (map, modi) => new { map, modi })
+              .Join(_context.MODIFIRE_PRICE, maping => maping.modi.ModifireID, price => price.ModifireID, (mapping, price) => new { mapping, price })
+              .Where(x => x.mapping.map.ProductID == productID && x.mapping.map.ModifireID == x.mapping.modi.ModifireID && x.price.ModifireID == x.mapping.modi.ModifireID && x.mapping.map.Status == 1)
+              .Select(x => new ModifireModel
+              {
+                  ModifireID = x.mapping.modi.ModifireID,
+                  CurrentPrice = x.price.CurrentPrice,
+                  ModifireName = x.mapping.modi.ModifireName,
+                  Color = x.mapping.modi.Color,
+                  Position = x.mapping.modi.Position ?? -1
+              }
+              ).OrderBy(p => p.Position).Skip(10*(CurrentPage-1)).Take(10).ToList();
             return data;
         }
         #endregion
@@ -290,9 +304,10 @@ namespace ServicePOS
                     ModifireID = x.mapping.modi.ModifireID,
                     CurrentPrice = x.price.CurrentPrice,
                     ModifireName = x.mapping.modi.ModifireName,
-                    Color = x.mapping.modi.Color
+                    Color = x.mapping.modi.Color,
+                    Position = x.mapping.modi.Position??-1
                 }
-                ).OrderBy(x => x.ModifireName).Skip(21 * (Page - 1)).Take(21).ToList();
+                ).OrderBy(x => x.Position).Skip(21 * (Page - 1)).Take(21).ToList();
             return data;
         }
 
@@ -325,6 +340,15 @@ namespace ServicePOS
         public IEnumerable<ModifireModel> GetModifireTotakList()
         {
             throw new NotImplementedException();
+        }
+
+
+        public int UpdatePosition(ModifireModel item)
+        {
+            int resut = 0;
+            string sql = "UPDATE MODIFIRE SET Position='" + item.Position + "' WHERE ModifireID='" + item.ModifireID + "'";
+            resut = _context.Database.ExecuteSqlCommand(sql);
+            return resut;
         }
     }
 }

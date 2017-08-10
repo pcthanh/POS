@@ -34,6 +34,9 @@ namespace POSEZ2U
         public int productID = 0;
         public List<ModifireModel> listAllItem = new List<ModifireModel>();
         public List<ModifireModel> listItem = new List<ModifireModel>();
+        private List<ModifireModel> lstPosition = new List<ModifireModel>();
+        private int indexOfControl = -1;
+        private UCMenuAdd ucAddMenu;
         public frmMenuAddItemList(int _productID)
         {
             InitializeComponent();
@@ -123,6 +126,7 @@ namespace POSEZ2U
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            this.UpdatePosition();
             var result = MapModifireToProductService.SaveMapModifireToProduct(listItem, productID, 0);
             if (result == 1)
             {
@@ -143,6 +147,8 @@ namespace POSEZ2U
         private void ucMenuAdd_Click(object sender, EventArgs e)
         {
             UCMenuAdd ucMenuAll = (UCMenuAdd)sender;
+            ucAddMenu = ucMenuAll;
+            indexOfControl = flpThisgroupitems.Controls.IndexOf(ucMenuAll);
             if (ucMenuAll.BackColor == Color.FromArgb(0, 102, 204))
             {
                 ucMenuAll.BackColor = DefaultBackColor;
@@ -232,6 +238,42 @@ namespace POSEZ2U
                 }
             }
             LoadAllItem();
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            if (indexOfControl > 0)
+            {
+                ModifireModel item = (ModifireModel)(ucAddMenu.Tag);
+                flpThisgroupitems.Controls.SetChildIndex(ucAddMenu, indexOfControl - 1);
+
+                indexOfControl = flpThisgroupitems.Controls.IndexOf(ucAddMenu);
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            int total = flpThisgroupitems.Controls.Count;
+            if (indexOfControl > 0 && indexOfControl < total)
+            {
+                ModifireModel item = (ModifireModel)(ucAddMenu.Tag);
+                flpThisgroupitems.Controls.SetChildIndex(ucAddMenu, indexOfControl + 1);
+
+                indexOfControl = flpThisgroupitems.Controls.IndexOf(ucAddMenu);
+            }
+        }
+        private void UpdatePosition()
+        {
+            for (int i = 0; i < flpThisgroupitems.Controls.Count; i++)
+            {
+                ModifireModel item = (ModifireModel)(flpThisgroupitems.Controls[i].Tag);
+                item.Position = flpThisgroupitems.Controls.IndexOf(flpThisgroupitems.Controls[i]);
+                lstPosition.Add(item);
+            }
+            for (int j = 0; j < lstPosition.Count; j++)
+            {
+                ModifireService.UpdatePosition(lstPosition[j]);
+            }
         }
     }
 }

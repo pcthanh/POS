@@ -381,6 +381,7 @@
           <Property Name="CreateDate" Type="datetime" />
           <Property Name="UpdateBy" Type="int" />
           <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Position" Type="int" />
         </EntityType>
         <EntityType Name="MODIFIRE_PRICE">
           <Key>
@@ -687,6 +688,7 @@
           <Property Name="UpdateDate" Type="datetime" />
           <Property Name="ProductNameSort" Type="nvarchar" MaxLength="500" />
           <Property Name="Portions" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="int" />
         </EntityType>
         <EntityType Name="PRODUCT_PRICE">
           <Key>
@@ -774,7 +776,7 @@
           <Property Name="UpdateDate" Type="datetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'VyVyCabra.dbo.TableTemp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'MekongNoodle.dbo.TableTemp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TableTemp">
           <Key>
             <PropertyRef Name="ShiftHistoryID" />
@@ -815,7 +817,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.TableTemp' does not have a primary k
           <Property Name="UpdateDate" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'VyVyCabra.dbo.VIEW_INVOICE_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'MekongNoodle.dbo.VIEW_INVOICE_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VIEW_INVOICE_ALL">
           <Key>
             <PropertyRef Name="InvoiceID" />
@@ -842,7 +844,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.VIEW_INVOICE_ALL' does not have a pr
           <Property Name="FloorType" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'VyVyCabra.dbo.VIEW_INVOICE_DETAIL_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'MekongNoodle.dbo.VIEW_INVOICE_DETAIL_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VIEW_INVOICE_DETAIL_ALL">
           <Key>
             <PropertyRef Name="InvoiceDetailID" />
@@ -869,7 +871,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.VIEW_INVOICE_DETAIL_ALL' does not ha
           <Property Name="Note" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'VyVyCabra.dbo.VIEW_INVOICE_DETAIL_MODIFIRE_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'MekongNoodle.dbo.VIEW_INVOICE_DETAIL_MODIFIRE_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VIEW_INVOICE_DETAIL_MODIFIRE_ALL">
           <Key>
             <PropertyRef Name="InvoiceModifireID" />
@@ -893,7 +895,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.VIEW_INVOICE_DETAIL_MODIFIRE_ALL' do
           <Property Name="Note" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'VyVyCabra.dbo.VIEW_ORDER_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'MekongNoodle.dbo.VIEW_ORDER_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VIEW_ORDER_ALL">
           <Key>
             <PropertyRef Name="Status" />
@@ -914,7 +916,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.VIEW_ORDER_ALL' does not have a prim
           <Property Name="ShiftID" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'VyVyCabra.dbo.VIEW_ORDER_DETAIL_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'MekongNoodle.dbo.VIEW_ORDER_DETAIL_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VIEW_ORDER_DETAIL_ALL">
           <Key>
             <PropertyRef Name="OrderDetailID" />
@@ -941,7 +943,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.VIEW_ORDER_DETAIL_ALL' does not have
           <Property Name="Note" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'VyVyCabra.dbo.VIEW_ORDER_DETAIL_MODIFIRE_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'MekongNoodle.dbo.VIEW_ORDER_DETAIL_MODIFIRE_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VIEW_ORDER_DETAIL_MODIFIRE_ALL">
           <Key>
             <PropertyRef Name="OrderModifireID" />
@@ -969,7 +971,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.VIEW_ORDER_DETAIL_MODIFIRE_ALL' does
           <Property Name="Note" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'VyVyCabra.dbo.VIEW_PAYMENT_INVOICE_HISTORY_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'MekongNoodle.dbo.VIEW_PAYMENT_INVOICE_HISTORY_ALL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VIEW_PAYMENT_INVOICE_HISTORY_ALL">
           <Key>
             <PropertyRef Name="PaymentHistoryID" />
@@ -991,7 +993,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.VIEW_PAYMENT_INVOICE_HISTORY_ALL' do
           <Property Name="Note" Type="nvarchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'VyVyCabra.dbo.view_report_invoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'MekongNoodle.dbo.view_report_invoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="view_report_invoice">
           <Key>
             <PropertyRef Name="CategoryID" />
@@ -2088,6 +2090,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.view_report_invoice' does not have a
           <Property Name="CreateDate" Type="DateTime" Precision="3" />
           <Property Name="UpdateBy" Type="Int32" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="Position" Type="Int32" />
         </EntityType>
         <EntityType Name="MODIFIRE_PRICE">
           <Key>
@@ -2394,6 +2397,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.view_report_invoice' does not have a
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="ProductNameSort" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Portions" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="Int32" />
         </EntityType>
         <EntityType Name="PRODUCT_PRICE">
           <Key>
@@ -3321,6 +3325,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.view_report_invoice' does not have a
           <EntitySetMapping Name="MODIFIREs">
             <EntityTypeMapping TypeName="POSEZ2UModel.MODIFIRE">
               <MappingFragment StoreEntitySet="MODIFIRE">
+                <ScalarProperty Name="Position" ColumnName="Position" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
@@ -3642,6 +3647,7 @@ warning 6002: The table/view 'VyVyCabra.dbo.view_report_invoice' does not have a
           <EntitySetMapping Name="PRODUCTs">
             <EntityTypeMapping TypeName="POSEZ2UModel.PRODUCT">
               <MappingFragment StoreEntitySet="PRODUCT">
+                <ScalarProperty Name="Position" ColumnName="Position" />
                 <ScalarProperty Name="Portions" ColumnName="Portions" />
                 <ScalarProperty Name="ProductNameSort" ColumnName="ProductNameSort" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />

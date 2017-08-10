@@ -292,7 +292,7 @@ namespace POSEZ2U
             if (data.StaffID > 0)
             {
                 UCUserListDetail ucUserDetail = new UCUserListDetail();
-
+               
                 if (pDetail.Controls.Count > 0)
                 {
                     ucUserDetail = (UCUserListDetail)pDetail.Controls[0];
@@ -322,7 +322,7 @@ namespace POSEZ2U
                 ucUserDetail.cbRole.ValueMember = "Key";
 
                 var textDefault = "";
-
+                ucUserDetail.cbRole.Items.Clear();
                 foreach (var item in department)
                 {
                     if (item.DepartmentID == data.DepartmentID)

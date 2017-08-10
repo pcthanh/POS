@@ -24,12 +24,23 @@ namespace POSEZ2U
             get { return _catalogeService ?? (_catalogeService = new CatalogueService()); }
             set { _catalogeService = value; }
         }
+
+        private IProductService _productService;
+        private IProductService ProductService
+        {
+            get { return _productService ?? (_productService = new ProductService()); }
+            set { _productService = value; }
+        }
         #endregion
 
 
         public int categoryid = 0;
-        public List<ProductionModel> listmap = new List<ProductionModel>();
-        public List<ProductionModel> listall = new List<ProductionModel>();
+        private List<ProductionModel> listmap = new List<ProductionModel>();
+        private List<ProductionModel> listall = new List<ProductionModel>();
+        private ProductionModel productWhenSelect;
+        private int indexOfItem=-1;
+        private UCMenuAdd ucAddMenu;
+        private List<ProductionModel> lstPosition = new List<ProductionModel>();
         public frmGroupAdd(int _categoryid)
         {
             InitializeComponent();
@@ -46,6 +57,7 @@ namespace POSEZ2U
             {
                 UCMenuAdd ucMenuAdd = new UCMenuAdd();
                 ucMenuAdd.lblGroupName.Text = listmap[i].ProductNameDesc;
+               
                 ucMenuAdd.Tag = listmap[i];
                 ucMenuAdd.Click += flpThisgroupitems_Click;
                 flpThisgroupitems.Controls.Add(ucMenuAdd);
@@ -67,6 +79,7 @@ namespace POSEZ2U
         void ucMenuAddAll_Click(object sender, EventArgs e)
         {
             UCMenuAdd ucMenuAll = (UCMenuAdd)sender;
+           
             if (ucMenuAll.BackColor == Color.FromArgb(0, 102, 204))
             {
                 ucMenuAll.BackColor = DefaultBackColor;
@@ -82,6 +95,9 @@ namespace POSEZ2U
         void flpThisgroupitems_Click(object sender, EventArgs e)
         {
             UCMenuAdd ucMenuAll = (UCMenuAdd)sender;
+            productWhenSelect = (ProductionModel)ucMenuAll.Tag;
+            ucAddMenu = ucMenuAll;
+            indexOfItem = flpThisgroupitems.Controls.IndexOf(ucMenuAll);
             if (ucMenuAll.BackColor == Color.FromArgb(0, 102, 204))
             {
                 ucMenuAll.BackColor = DefaultBackColor;
@@ -136,6 +152,7 @@ namespace POSEZ2U
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            this.UpdatePosition();
             var result = CatalogeService.SaveDataMapProductToCategory(listmap, categoryid, 0);
             if (result == 1)
             {
@@ -226,6 +243,44 @@ namespace POSEZ2U
             catch (Exception ex)
             {
                 SystemLog.LogPOS.WriteLog("frmGroupAdd:::::::::::::::::::txtSearch_TextChanged:::::::::::::::::" + ex.Message);
+            }
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            
+            if (indexOfItem > 0)
+            {
+                ProductionModel item = (ProductionModel)(ucAddMenu.Tag);
+                flpThisgroupitems.Controls.SetChildIndex(ucAddMenu, indexOfItem-1);
+                
+                indexOfItem = flpThisgroupitems.Controls.IndexOf(ucAddMenu);
+            }
+
+        }
+        private void UpdatePosition()
+        {
+            for (int i = 0; i < flpThisgroupitems.Controls.Count; i++)
+            {
+                ProductionModel item = (ProductionModel)(flpThisgroupitems.Controls[i].Tag);
+                item.Position = flpThisgroupitems.Controls.IndexOf(flpThisgroupitems.Controls[i]);
+                lstPosition.Add(item);
+            }
+            for (int j = 0; j < lstPosition.Count; j++)
+            {
+                ProductService.UpdatePositionProduct(lstPosition[j]);
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            int total = flpThisgroupitems.Controls.Count;
+            if (indexOfItem>0 &&indexOfItem < total)
+            {
+                ProductionModel item = (ProductionModel)(ucAddMenu.Tag);
+                flpThisgroupitems.Controls.SetChildIndex(ucAddMenu, indexOfItem +1);
+
+                indexOfItem = flpThisgroupitems.Controls.IndexOf(ucAddMenu);
             }
         }
     }

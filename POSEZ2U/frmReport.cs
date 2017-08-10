@@ -1111,25 +1111,25 @@ namespace POSEZ2U
             try
             {
                 float l_y = 0;
-                l_y = posPrinter.DrawString(Header, e, new Font("Arial", 10, FontStyle.Italic), l_y, 2,false);
+                l_y = posPrinter.DrawString(Header, e, new Font("Arial", 10, FontStyle.Italic), l_y, 2, false, false);
                 l_y += posPrinter.GetHeightPrinterLine() / 10;
                 l_y = posPrinter.DrawLine("", new Font("Arial", 10), e, System.Drawing.Drawing2D.DashStyle.Dot, l_y, 1);
                 l_y = posPrinter.DrawString(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(), e,
-                    new Font("Arial", 10, FontStyle.Italic), l_y, 1,false);
+                    new Font("Arial", 10, FontStyle.Italic), l_y, 1, false, false);
                 l_y += posPrinter.GetHeightPrinterLine() / 10;
-                l_y = posPrinter.DrawString("OPERATOR#"+ POSEZ2U.Class.UserLoginModel.UserLoginInfo.UserName, e, new Font("Arial", 10, FontStyle.Italic), l_y, 1,false);
+                l_y = posPrinter.DrawString("OPERATOR#" + POSEZ2U.Class.UserLoginModel.UserLoginInfo.UserName, e, new Font("Arial", 10, FontStyle.Italic), l_y, 1, false, false);
 
                 foreach (var item in DataPrinter)
                 {
                     string textstring = item.Tilte + " : " + item.Value;
-                    l_y = posPrinter.DrawString(textstring, e, new Font("Arial", 10, FontStyle.Italic), l_y, 1,false);
+                    l_y = posPrinter.DrawString(textstring, e, new Font("Arial", 10, FontStyle.Italic), l_y, 1, false, false);
                 }
 
 
                 l_y += posPrinter.GetHeightPrinterLine() / 2;
-                l_y = posPrinter.DrawString(cofig.Name, e, new Font("Arial", 10), l_y, 2,false);
-                l_y = posPrinter.DrawString(cofig.Tel, e, new Font("Arial", 10), l_y, 2,false);
-                l_y = posPrinter.DrawString(cofig.Note, e, new Font("Arial", 10), l_y, 2,false);
+                l_y = posPrinter.DrawString(cofig.Name, e, new Font("Arial", 10), l_y, 2, false, false);
+                l_y = posPrinter.DrawString(cofig.Tel, e, new Font("Arial", 10), l_y, 2, false, false);
+                l_y = posPrinter.DrawString(cofig.Note, e, new Font("Arial", 10), l_y, 2, false, false);
             }
             catch (Exception ex)
             {

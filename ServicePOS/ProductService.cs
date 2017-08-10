@@ -225,7 +225,7 @@ namespace ServicePOS
             var data = _context.MAP_PRODUCT_TO_CATEGORY.Join(_context.PRODUCTs, cate => cate.ProductID, pro => pro.ProductID, (cate, pro) => new { cate, pro })
                 .Join(_context.PRODUCT_PRICE, map => map.pro.ProductID, price => price.ProductID, (map, price) => new { map, price })
                 //.Join(_context.PRINTE_JOB_DETAIL,map1=>map1.map.pro.ProductID,print=>print.ProductID,(map1,print)=>new{map1,print})
-                .Where(x => x.map.cate.CategoryID == id && x.map.pro.Status==1)
+                .Where(x => x.map.cate.CategoryID == id && x.map.pro.Status==1 && x.map.cate.Status==1)
                 .Select(x => new ProductionModel()
                 {
                     ProductNameDesc = x.map.pro.ProductNameDesc,
@@ -235,12 +235,12 @@ namespace ServicePOS
                     Status = x.map.pro.Status,
                     WasPrice = x.price.WasPrice,
                     Color = x.map.pro.Color,
-                    CategoryID =x.map.cate.CategoryID
-                    
+                    CategoryID =x.map.cate.CategoryID,
+                    Position=x.map.pro.Position??-1
                     //Printer = x.print.PrinterID ?? 0,
                     //PrinterJob = x.print.PrinteJobID
                 }
-                ).OrderBy(p => p.ProductNameSort).Skip(21 * (page - 1))
+                ).OrderBy(p => p.Position).Skip(21 * (page - 1))
          .Take(21).ToList();
             return data;
         }
@@ -309,6 +309,16 @@ namespace ServicePOS
                 }
                 );
             return data;
+        }
+
+
+        public int UpdatePositionProduct(ProductionModel item)
+        {
+            int resut = 0;
+            string sql = "UPDATE PRODUCT SET Position='" + item.Position + "' WHERE ProductID='" + item.ProductID + "'";
+            resut= _context.Database.ExecuteSqlCommand(sql);
+            return resut;
+
         }
     }
 }

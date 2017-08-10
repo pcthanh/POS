@@ -426,30 +426,30 @@ namespace POSEZ2U
         public void printnTransferTableAll(string TransferTable, PrintPageEventArgs e)
         {
             float l_y = 0;
-            l_y = posPrinter.DrawString(Header, e, new Font("Arial", 14, FontStyle.Italic), l_y, 2, false);
+            l_y = posPrinter.DrawString(Header, e, new Font("Arial", 14, FontStyle.Italic), l_y, 2, false, false);
             l_y += posPrinter.GetHeightPrinterLine() / 10;
             l_y = posPrinter.DrawLine("", new Font("Arial", 14), e, System.Drawing.Drawing2D.DashStyle.Dot, l_y, 1);
-            l_y = posPrinter.DrawString(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(), e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
+            l_y = posPrinter.DrawString(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(), e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false, false);
             l_y += posPrinter.GetHeightPrinterLine() / 10;
-            l_y = posPrinter.DrawString("OPERATOR#MANAGER", e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
-            l_y = posPrinter.DrawString(TransferTable, e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
+            l_y = posPrinter.DrawString("OPERATOR#MANAGER", e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false, false);
+            l_y = posPrinter.DrawString(TransferTable, e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false, false);
             l_y += posPrinter.GetHeightPrinterLine() / 2;
-            l_y = posPrinter.DrawString(cofig.Web, e, new Font("Arial", 10), l_y, 2, false);
-            l_y = posPrinter.DrawString(cofig.Logan, e, new Font("Arial", 10), l_y, 2, false);
-            l_y = posPrinter.DrawString(cofig.Note, e, new Font("Arial", 10), l_y, 2, false);
+            l_y = posPrinter.DrawString(cofig.Web, e, new Font("Arial", 10), l_y, 2, false, false);
+            l_y = posPrinter.DrawString(cofig.Logan, e, new Font("Arial", 10), l_y, 2, false, false);
+            l_y = posPrinter.DrawString(cofig.Note, e, new Font("Arial", 10), l_y, 2, false, false);
 
         }
         public float printnTransferTableNotAll(OrderDateModel Order, PrintPageEventArgs e)
         {
             float l_y = 0;
-            l_y = posPrinter.DrawString(Header, e, new Font("Arial", 14, FontStyle.Italic), l_y, 2, false);
+            l_y = posPrinter.DrawString(Header, e, new Font("Arial", 14, FontStyle.Italic), l_y, 2, false, false);
            l_y += posPrinter.GetHeightPrinterLine() / 10;
            l_y=posPrinter.DrawLine("", new Font("Arial", 14), e, System.Drawing.Drawing2D.DashStyle.Dot, l_y, 1);
-           l_y = posPrinter.DrawString(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(), e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
+           l_y = posPrinter.DrawString(DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString(), e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false, false);
            l_y += posPrinter.GetHeightPrinterLine() / 10;
-           l_y = posPrinter.DrawString("OPERATOR#MANAGER", e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
-           posPrinter.DrawString("Table# " + Order.FloorID, e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false);
-           l_y = posPrinter.DrawString("Order#" + Order.OrderID, e, new Font("Arial", 14), l_y, 3, false);
+           l_y = posPrinter.DrawString("OPERATOR#MANAGER", e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false, false);
+           posPrinter.DrawString("Table# " + Order.FloorID, e, new Font("Arial", 14, FontStyle.Italic), l_y, 1, false, false);
+           l_y = posPrinter.DrawString("Order#" + Order.OrderID, e, new Font("Arial", 14), l_y, 3, false, false);
            posPrinter.DrawLine("", new Font("Arial", 14), e, System.Drawing.Drawing2D.DashStyle.Dot, l_y, 1);
            l_y += posPrinter.GetHeightPrinterLine() / 10;
            int countItem =0;
@@ -459,19 +459,19 @@ namespace POSEZ2U
 
                if (Order.ListOrderDetail[i].ChangeStatus == 2)
                {
-                   l_y = posPrinter.DrawString(Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
+                   l_y = posPrinter.DrawString(Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false, false);
                    posPrinter.DrawCancelLine(e, yStart, l_y);
                }
                else
                {
                    if (Order.ListOrderDetail[i].ChangeStatus == 1)
                    {
-                       l_y = posPrinter.DrawString("--Add  " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
+                       l_y = posPrinter.DrawString("--Add  " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false, false);
                    }
                    else
                    {
                        countItem++;
-                       l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false);
+                       l_y = posPrinter.DrawString(Order.ListOrderDetail[i].Qty.ToString() + " " + Order.ListOrderDetail[i].ProductName, e, new Font("Arial", 14), l_y, 1, false, false);
                    }
                }
                //l_y = posPrinter.DrawString(OrderMain.ListOrderDetail[i].Qty.ToString(), e, new Font("Arial", 14), l_y, 2);
@@ -483,19 +483,19 @@ namespace POSEZ2U
                    {
                        if (Order.ListOrderDetail[i].ListOrderDetailModifire[j].ChangeStatus == 2)
                        {
-                           l_y = posPrinter.DrawString(Order.ListOrderDetail[i].ListOrderDetailModifire[j].ModifireName, e, new Font("Arial", 10), l_y, 1, false);
+                           l_y = posPrinter.DrawString(Order.ListOrderDetail[i].ListOrderDetailModifire[j].ModifireName, e, new Font("Arial", 10), l_y, 1, false, false);
                            posPrinter.DrawCancelLine(e, yStart, l_y);
                        }
                        else
                        {
                            if (Order.ListOrderDetail[i].ListOrderDetailModifire[j].ChangeStatus == 1)
                            {
-                               l_y = posPrinter.DrawString("--Add" + Order.ListOrderDetail[i].ListOrderDetailModifire[j].ModifireName, e, new Font("Arial", 10, FontStyle.Italic), l_y, 1, false);
+                               l_y = posPrinter.DrawString("--Add" + Order.ListOrderDetail[i].ListOrderDetailModifire[j].ModifireName, e, new Font("Arial", 10, FontStyle.Italic), l_y, 1, false, false);
                            }
                            else
                            {
                                if(!OrderMain.IsLoadFromData)
-                                   l_y = posPrinter.DrawString("--" + Order.ListOrderDetail[i].ListOrderDetailModifire[j].ModifireName, e, new Font("Arial", 10, FontStyle.Italic), l_y, 1, false);
+                                   l_y = posPrinter.DrawString("--" + Order.ListOrderDetail[i].ListOrderDetailModifire[j].ModifireName, e, new Font("Arial", 10, FontStyle.Italic), l_y, 1, false, false);
                            }
                        }
                        //l_y = posPrinter.DrawString("$" + money.Format2(OrderMain.ListOrderDetail[i].ListOrderDetailModifire[j].Price.ToString()), e, new Font("Arial", 14), l_y, 3);
@@ -505,9 +505,9 @@ namespace POSEZ2U
            l_y += posPrinter.GetHeightPrinterLine() / 10;
 
            posPrinter.DrawLine("", new Font("Arial", 14), e, System.Drawing.Drawing2D.DashStyle.Dot, l_y, 1);
-           l_y = posPrinter.DrawString("", e, new Font("Arial", 14), l_y, 1, false);
+           l_y = posPrinter.DrawString("", e, new Font("Arial", 14), l_y, 1, false, false);
            l_y += posPrinter.GetHeightPrinterLine() / 10;
-           posPrinter.DrawString("Total item: " + countItem, e, new Font("Arial", 14, FontStyle.Bold), l_y, 1, false);
+           posPrinter.DrawString("Total item: " + countItem, e, new Font("Arial", 14, FontStyle.Bold), l_y, 1, false, false);
            //l_y = posPrinter.DrawString("$" + money.Format2(OrderMain.SubTotal()), e, new Font("Arial", 14, FontStyle.Bold), l_y, 3);
            l_y += posPrinter.GetHeightPrinterLine()/2;
            return l_y;

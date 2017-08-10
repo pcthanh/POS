@@ -13,6 +13,7 @@ namespace ServicePOS
         int GetTotalProducts();
         int Created(ProductionModel product);
         int Delete(ProductionModel product);
+        
         IEnumerable<ProductionModel> GetProdutcByCategory(int id,int page);
         ProductionModel GetPrinterType(int ID);
         ProductionModel GetPrinterTypeByCate(int ID);
@@ -20,5 +21,6 @@ namespace ServicePOS
         IEnumerable<ProductionModel> GetProdutcByCategoryPrint(int id);
 
         IEnumerable<PrinteJobDetailModel> GetListPrintJob(int ProductID, int catagory);
+        int UpdatePositionProduct(ProductionModel item);
     }
 }

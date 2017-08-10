@@ -90,6 +90,7 @@
             this.btnExport.TabIndex = 3;
             this.btnExport.Text = "Export this report";
             this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Visible = false;
             // 
             // panel3
             // 

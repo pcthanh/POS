@@ -30,5 +30,6 @@ namespace ServicePOS
         IEnumerable<ModifireModel> searchProduct(string textSearch, int type);
 
         int EditModifirePrice(ModifirePriceModel modifirePriceData);
+        int UpdatePosition(ModifireModel item);
     }
 }

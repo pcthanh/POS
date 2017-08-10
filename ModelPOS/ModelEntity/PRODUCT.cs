@@ -25,5 +25,6 @@ namespace ModelPOS.ModelEntity
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public string ProductNameSort { get; set; }
         public string Portions { get; set; }
+        public Nullable<int> Position { get; set; }
     }
 }

@@ -4,6 +4,8 @@ using System.Text;
 using System.Drawing.Printing;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Collections;
+using System.IO;
 namespace Printer
 {
    public class POSPrinter:PrintDocument
@@ -39,7 +41,7 @@ namespace Printer
         }
 
 
-        public float DrawString(string s, System.Drawing.Printing.PrintPageEventArgs e, System.Drawing.Font font, float y, int textAlign,Boolean isName)
+        public float DrawString(string s, System.Drawing.Printing.PrintPageEventArgs e, System.Drawing.Font font, float y, int textAlign,Boolean isName,Boolean isQunatity)
         {
             float x;
             List<string> list = SplitStringLine(s, e, font,isName);
@@ -52,7 +54,10 @@ namespace Printer
                 }
                 else if (textAlign == 2)
                 {
-                    x = (float)Math.Abs(((float)e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width) / 2);
+                    if(isQunatity)
+                        x = (float)Math.Abs(((float)e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width) /1.5);
+                    else
+                        x = (float)Math.Abs(((float)e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width) / 2);
                 }
                 else
                 {
@@ -65,14 +70,99 @@ namespace Printer
                 //                new Font(new FontFamily("Arial"), 10F), Brushes.Black,
                 //                new RectangleF(new PointF(x, y), sf),
                 //                StringFormat.GenericTypographic);
-                
-                e.Graphics.DrawString(item, font, System.Drawing.Brushes.Black, x,y);
+                 
+                e.Graphics.DrawString(item, font, (System.Drawing.Brushes.Black), x,y);
+               
                 y += e.Graphics.MeasureString(item, font).Height;
             }
 
             return y;
         }
-        private List<string> SplitStringLine(string str, System.Drawing.Printing.PrintPageEventArgs e, System.Drawing.Font font,Boolean isName)
+
+        public float DrawString2(string s, System.Drawing.Printing.PrintPageEventArgs e, System.Drawing.Font font, float y, int textAlign, Boolean isName, Boolean isQunatity)
+        {
+            float x;
+            List<string> list = SplitStringLine(s, e, font, isName);
+            foreach (string item in list)
+            {
+                if (textAlign == 1)
+                {
+                    x = 0;
+
+                }
+                else if (textAlign == 2)
+                {
+                    if (isQunatity)
+                        x = (float)Math.Abs(((float)e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width) / 1.5);
+                    else
+                        x = (float)Math.Abs(((float)e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width) / 2);
+                }
+                else
+                {
+                    x = (float)Math.Abs(((float)e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width) / 1.1);
+                    //x = e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width;
+                }
+                SizeF sf = e.Graphics.MeasureString(s,
+                         new Font(new FontFamily("Arial"), 10F), 60);
+                //e.Graphics.DrawString("shdadj asdhkj shad adas dash asdl asasdassa",
+                //                new Font(new FontFamily("Arial"), 10F), Brushes.Black,
+                //                new RectangleF(new PointF(x, y), sf),
+                //                StringFormat.GenericTypographic);
+
+                e.Graphics.DrawString(item, font, (System.Drawing.Brushes.White), x, y);
+
+                y += e.Graphics.MeasureString(item, font).Height;
+            }
+
+            return y;
+        }
+
+        public float DrawString1(string s, System.Drawing.Printing.PrintPageEventArgs e, System.Drawing.Font font, float y, int textAlign, Boolean isName, Boolean isQunatity)
+        {
+            float x;
+            List<string> list = SplitStringLine(s, e, font, isName);
+            foreach (string item in list)
+            {
+                if (textAlign == 1)
+                {
+                    x = 0;
+
+                }
+                else if (textAlign == 2)
+                {
+                    if (isQunatity)
+                        x = (float)Math.Abs(((float)e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width) / 1.5);
+                    else
+                        x = (float)Math.Abs(((float)e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width) / 2);
+                }
+                else
+                {
+                    x = (float)Math.Abs(((float)e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width) / 1.1);
+                    //x = e.PageBounds.Width - e.Graphics.MeasureString(item, font).Width;
+                }
+                SizeF sf = e.Graphics.MeasureString(s,
+                         new Font(new FontFamily("Arial"), 10F), 60);
+                //e.Graphics.DrawString("shdadj asdhkj shad adas dash asdl asasdassa",
+                //                new Font(new FontFamily("Arial"), 10F), Brushes.Black,
+                //                new RectangleF(new PointF(x, y), sf),
+                //                StringFormat.GenericTypographic);
+                SolidBrush myBrush = new SolidBrush(Color.Black);
+
+                Rectangle rect = new Rectangle((int)x, (int)y,
+                    e.PageBounds.Width, 24);
+                StringFormat sf1 = new StringFormat();
+                sf1.Alignment = StringAlignment.Near;
+                sf1.LineAlignment = StringAlignment.Center;
+                e.Graphics.FillRectangle(myBrush, rect);
+                e.Graphics.DrawString(item, font, (System.Drawing.Brushes.White),rect,sf1);
+
+                y += e.Graphics.MeasureString(item, font).Height;
+            }
+
+            return y;
+        }
+
+        public List<string> SplitStringLine(string str, System.Drawing.Printing.PrintPageEventArgs e, System.Drawing.Font font,Boolean isName)
         {
             List<string> list = new List<string>();
             string[] s = str.Split(' ');
@@ -104,7 +194,7 @@ namespace Printer
                     {
                         float test = e.Graphics.MeasureString(resuilt + s[i], font).Width;
                         SystemLog.LogPOS.WriteLog(test.ToString());
-                        if (e.Graphics.MeasureString(resuilt + s[i], font).Width > 150 && resuilt.Length > 0)
+                        if (e.Graphics.MeasureString(resuilt + s[i], font).Width > 200 && resuilt.Length > 0)
                         {
                             list.Add(resuilt);
                             i--;
@@ -163,10 +253,119 @@ namespace Printer
             else
             {
                 x = e.PageBounds.Width - e.Graphics.MeasureString(s, font).Width;
-            }
+            }   
             e.Graphics.DrawLine(pen, x, y, x + width, y);
             y += 2;
             return y;
+        }
+
+        public float DrwaImage(System.Drawing.Printing.PrintPageEventArgs e, System.Drawing.Font font, float y, int textAlign)
+        {
+            float x = 0 ;
+            
+            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string mImageFullFolder = System.IO.Path.GetDirectoryName(path) + "\\logo\\logo.png";
+            Image image1 =(Image.FromFile(mImageFullFolder));
+            
+            if (textAlign == 2)
+            {
+
+                x = e.PageBounds.Width - 80;
+                if (x < 0)
+                {
+                    x = 0;
+                }
+                else
+                    x = x / 2;
+                //if (image1.Width >= e.PageBounds.Width)
+                //{
+                //    x = 0;
+                //}
+                //else
+                //    x = (e.PageBounds.Width / 3)+7;
+            }
+            //resized.SetResolution(300, 300);
+            e.Graphics.SmoothingMode =
+                  SmoothingMode.AntiAlias;
+            
+            e.Graphics.InterpolationMode =
+                InterpolationMode.High;
+
+
+            //e.Graphics.DrawImage(resized,
+            //    x, y,80,80);
+            e.Graphics.DrawImage(image1, (int)x, (int)y,80,80);
+            y += 80+2;
+            return y;
+
+        }
+        public float DrwaImage1(System.Drawing.Printing.PrintPageEventArgs e, System.Drawing.Font font, float y, int textAlign)
+        {
+            float x = 0;
+
+            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string mImageFullFolder = System.IO.Path.GetDirectoryName(path) + "\\logo\\panel.png";
+            Image image1 = (Image.FromFile(mImageFullFolder));
+
+            if (textAlign == 2)
+            {
+
+                x = e.PageBounds.Width - 80;
+                if (x < 0)
+                {
+                    x = 0;
+                }
+                else
+                    x = x / 2;
+                //if (image1.Width >= e.PageBounds.Width)
+                //{
+                //    x = 0;
+                //}
+                //else
+                //    x = (e.PageBounds.Width / 3)+7;
+            }
+            //resized.SetResolution(300, 300);
+            e.Graphics.SmoothingMode =
+                  SmoothingMode.AntiAlias;
+
+            e.Graphics.InterpolationMode =
+                InterpolationMode.High;
+
+
+            //e.Graphics.DrawImage(resized,
+            //    x, y,80,80);
+            e.Graphics.DrawImage(image1, (int)x, (int)y, 249, 24);
+            y += 80 + 2;
+            return y;
+
+        }
+        public Bitmap GrayScaleFilter(Bitmap image)
+        {
+            Bitmap grayScale = new Bitmap(image.Width, image.Height);
+
+            for (Int32 y = 0; y < grayScale.Height; y++)
+                for (Int32 x = 0; x < grayScale.Width; x++)
+                {
+                    Color c = image.GetPixel(x, y);
+
+                    Int32 gs = (Int32)(c.R * 0.3 + c.G * 0.59 + c.B * 0.11);
+
+                    grayScale.SetPixel(x, y, Color.FromArgb(gs, gs, gs));
+                }
+            return grayScale;
+        }
+        private Bitmap CreateLargeIconForImage(Bitmap src)
+        {
+            Bitmap bmp = new Bitmap(128, 128);
+            Graphics g = Graphics.FromImage(bmp);
+
+            float scale = Math.Max((float)src.Width / 128.0f, (float)src.Height / 128.0f);
+            PointF p = new PointF(128.0f - ((float)src.Width / scale), 128.0f - ((float)src.Height / scale));
+            SizeF size = new SizeF((float)src.Width / scale, (float)src.Height / scale);
+
+            g.DrawImage(src, new RectangleF(p, size));
+
+            return bmp;
         }
 
         //public float DrawBarcode(string dataBarcode, System.Drawing.Printing.PrintPageEventArgs e, float y,int align)
@@ -361,7 +560,7 @@ namespace Printer
                 //resuilt += data;
                 if (e.Graphics.MeasureString(resuilt + " " + data, font).Width > e.PageBounds.Width)
                 {
-                    y = DrawString(resuilt, e, font, y, 1, false);
+                    y = DrawString(resuilt, e, font, y, 1, false,false);
                     resuilt = data;
                 }
                 else
@@ -369,7 +568,7 @@ namespace Printer
                     resuilt += data + " ";
                     if (i == (list.Length - 1))
                     {
-                        y = DrawString(resuilt, e, font, y, 1, false);
+                        y = DrawString(resuilt, e, font, y, 1, false,false);
                     }
                 }
             }
@@ -379,6 +578,125 @@ namespace Printer
         }
         public void CanCelPrint()
         {
+        }
+        public class BitmapData
+        {
+            public BitArray Dots
+            {
+                get;
+                set;
+            }
+
+            public int Height
+            {
+                get;
+                set;
+            }
+
+            public int Width
+            {
+                get;
+                set;
+            }
+        }
+        public BitmapData GetBitmapData(string bmpFileName)
+        {
+            using (var bitmap = (Bitmap)Bitmap.FromFile(bmpFileName))
+            {
+                var threshold = 127;
+                var index = 0;
+                double multiplier = 570; // this depends on your printer model. for Beiyang you should use 1000
+                double scale = (double)(multiplier / (double)bitmap.Width);
+                int xheight = (int)(bitmap.Height * scale);
+                int xwidth = (int)(bitmap.Width * scale);
+                var dimensions = xwidth * xheight;
+                var dots = new BitArray(dimensions);
+
+                for (var y = 0; y < xheight; y++)
+                {
+                    for (var x = 0; x < xwidth; x++)
+                    {
+                        var _x = (int)(x / scale);
+                        var _y = (int)(y / scale);
+                        var color = bitmap.GetPixel(_x, _y);
+                        var luminance = (int)(color.R * 0.3 + color.G * 0.59 + color.B * 0.11);
+                        dots[index] = (luminance < threshold);
+                        index++;
+                    }
+                }
+
+                return new BitmapData()
+                {
+                    Dots = dots,
+                    Height = (int)(bitmap.Height * scale),
+                    Width = (int)(bitmap.Width * scale)
+                };
+            }
+        }
+        public string GetLogo(string files)
+        {
+            string logo = "";
+            if (!File.Exists(files))
+                return null;
+            BitmapData data = GetBitmapData(files);
+            BitArray dots = data.Dots;
+            byte[] width = BitConverter.GetBytes(data.Width);
+
+            int offset = 0;
+            MemoryStream stream = new MemoryStream();
+            BinaryWriter bw = new BinaryWriter(stream);
+
+            bw.Write((char)0x1B);
+            bw.Write('@');
+
+            bw.Write((char)0x1B);
+            bw.Write('3');
+            bw.Write((byte)24);
+
+            while (offset < data.Height)
+            {
+                bw.Write((char)0x1B);
+                bw.Write('*');         // bit-image mode
+                bw.Write((byte)33);    // 24-dot double-density
+                bw.Write(width[0]);  // width low byte
+                bw.Write(width[1]);  // width high byte
+
+                for (int x = 0; x < data.Width; ++x)
+                {
+                    for (int k = 0; k < 3; ++k)
+                    {
+                        byte slice = 0;
+                        for (int b = 0; b < 8; ++b)
+                        {
+                            int y = (((offset / 8) + k) * 8) + b;
+                            // Calculate the location of the pixel we want in the bit array.
+                            // It'll be at (y * width) + x.
+                            int i = (y * data.Width) + x;
+
+                            // If the image is shorter than 24 dots, pad with zero.
+                            bool v = false;
+                            if (i < dots.Length)
+                            {
+                                v = dots[i];
+                            }
+                            slice |= (byte)((v ? 1 : 0) << (7 - b));
+                        }
+
+                        bw.Write(slice);
+                    }
+                }
+                offset += 24;
+                bw.Write((char)0x0A);
+            }
+            // Restore the line spacing to the default of 30 dots.
+            bw.Write((char)0x1B);
+            bw.Write('3');
+            bw.Write((byte)30);
+
+            bw.Flush();
+            byte[] bytes = stream.ToArray();
+            string tt = Encoding.Default.GetString(bytes);
+            return tt;
         }
     }
 }
