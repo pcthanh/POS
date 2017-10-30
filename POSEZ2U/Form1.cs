@@ -236,12 +236,16 @@ namespace POSEZ2U
                             if (usermodel.DepartmentID ==1 || usermodel.DepartmentID == 2)
                             {
                                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                                UserVoidItem.UserLoginInfo = usermodel;
                                 this.Close();
                             }
                             else
                             {
                                 frmMessager frmMes = new frmMessager("Login", "You can not login!");
                                 frmMes.ShowDialog();
+                                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                                UserVoidItem.UserLoginInfo = usermodel;
+                                this.Close();
                             }
                         }
                         

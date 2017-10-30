@@ -86,7 +86,8 @@ namespace POSEZ2U
                         frmFloor frmfloor = new frmFloor();
                         if (Class.CheckFormShowing.FromShowing("frmFloor"))
                         {
-                            Application.OpenForms["frmFloor"].BringToFront();
+                            Application.OpenForms["frmFloor"].Show();
+                            Application.OpenForms["frmFloor"].TopLevel = true;
                         }
                         else
                         {

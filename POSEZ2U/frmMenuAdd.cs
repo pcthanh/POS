@@ -30,7 +30,10 @@ namespace POSEZ2U
 
         public int catalogueid = 0;
         public List<CategoryModel> listmap= new List<CategoryModel>();
-        public List<CategoryModel> listall = new List<CategoryModel>(); 
+        public List<CategoryModel> listall = new List<CategoryModel>();
+        private int indexOfItem = -1;
+        private UCMenuAdd ucMenuAdd;
+        private List<CategoryModel> lstPosition = new List<CategoryModel>();
         public frmMenuAdd(int _catalogueid)
         {
             InitializeComponent();
@@ -84,6 +87,8 @@ namespace POSEZ2U
         void flpThisgroupitems_Click(object sender, EventArgs e)
         {
             UCMenuAdd ucMenuAll = (UCMenuAdd)sender;
+            indexOfItem = flpThisgroupitems.Controls.IndexOf(ucMenuAll);
+            ucMenuAdd = ucMenuAll;
             if (ucMenuAll.BackColor == Color.FromArgb(0, 102, 204))
             {
                 ucMenuAll.BackColor = DefaultBackColor;
@@ -138,6 +143,7 @@ namespace POSEZ2U
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            this.UpdatePosition();
             var result = CatalogeService.SaveMapCategoryToCatalogue(listmap, catalogueid,0);
             if (result == 1)
             {
@@ -229,6 +235,42 @@ namespace POSEZ2U
             catch (Exception ex)
             {
                 SystemLog.LogPOS.WriteLog("frmMenuAdd:::::::::::::::::::txtSearch_TextChanged::::::::::::::::::::::::::" + ex.Message);
+            }
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            if (indexOfItem > 0)
+            {
+                CategoryModel item = (CategoryModel)(ucMenuAdd.Tag);
+                flpThisgroupitems.Controls.SetChildIndex(ucMenuAdd, indexOfItem - 1);
+
+                indexOfItem = flpThisgroupitems.Controls.IndexOf(ucMenuAdd);
+            }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            int total = flpThisgroupitems.Controls.Count;
+            if (indexOfItem > 0 && indexOfItem < total)
+            {
+                CategoryModel item = (CategoryModel)(ucMenuAdd.Tag);
+                flpThisgroupitems.Controls.SetChildIndex(ucMenuAdd, indexOfItem + 1);
+
+                indexOfItem = flpThisgroupitems.Controls.IndexOf(ucMenuAdd);
+            }
+        }
+        private void UpdatePosition()
+        {
+            for (int i = 0; i < flpThisgroupitems.Controls.Count; i++)
+            {
+                CategoryModel item = (CategoryModel)(flpThisgroupitems.Controls[i].Tag);
+                item.Position= flpThisgroupitems.Controls.IndexOf(flpThisgroupitems.Controls[i]);
+                lstPosition.Add(item);
+            }
+            for (int j = 0; j < lstPosition.Count; j++)
+            {
+                CatalogeService.UpdatePostionCategory(lstPosition[j]);
             }
         }
     }

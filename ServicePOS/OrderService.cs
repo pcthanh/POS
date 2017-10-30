@@ -9,6 +9,7 @@ using SystemLog;
 using ServicePOS.Model;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 
 
 namespace ServicePOS
@@ -903,6 +904,9 @@ namespace ServicePOS
                         voidItem.CreateDate = DateTime.Now;
                         voidItem.UpdateBy = 0;
                         voidItem.UpdateDate = DateTime.Now;
+                        voidItem.ItemName = item.ProductName;
+                        voidItem.Staff = OrderVoid.UserName;
+                        voidItem.Admin = OrderVoid.AdminVoid;
                         _context.Entry(voidItem).State = System.Data.Entity.EntityState.Added;
                         _context.SaveChanges();
                         result = 1;
@@ -933,20 +937,21 @@ namespace ServicePOS
                     CreateDate = x.CreateDate,
                     UpdateBy = x.UpdateBy,
                     UpdateDate = x.UpdateDate,
-                    Status = x.Status
+                    Status = x.Status,
+                    OrderNumber = x.OrderNumber
                 }
                 ).OrderBy(x => x.OrderID).Skip(24 * (Page - 1)).Take(24).ToList();;
             return listPrev;
         }
 
-        public OrderDateModel GetListOrderPrevOrder(string idTable, int idOrder, DateTime ts)
+        public OrderDateModel GetListOrderPrevOrder(string idTable, int idOrder, string orderNum,DateTime ts)
         {
             OrderDateModel OrderMain = new OrderDateModel();
             try
             {
 
                
-                var dataOrder = _context.INVOICEs.Where(x => x.OrderID == idOrder && x.Status == 1).SingleOrDefault();
+                var dataOrder = _context.INVOICEs.Where(x => x.OrderID == idOrder && x.Status == 1 && x.OrderNumber==orderNum).SingleOrDefault();
                 if (dataOrder != null)
                 {
                     OrderMain.Seat = dataOrder.Seat ?? 0;
@@ -1116,7 +1121,8 @@ namespace ServicePOS
             {
                 using (var tran = _context.Database.BeginTransaction())
                 {
-                    _context.Database.ExecuteSqlCommand("update ORDER_DATE set Status=4 where OrderID='" + Order.OrderID + "'");
+                    string sql = "update ORDER_DATE set Status=4,UpdateBy=" + Order.AdminVoid + ",UpdateDate='" + DateTime.Now + "' where OrderID='" + Order.OrderID + "'";
+                    _context.Database.ExecuteSqlCommand(sql);
                     tran.Commit();
                     Result = 1;
                 }
@@ -1212,10 +1218,30 @@ namespace ServicePOS
                    CreateDate = x.CreateDate,
                    UpdateBy = x.UpdateBy,
                    UpdateDate = x.UpdateDate,
-                   Status = x.Status
+                   Status = x.Status,
+                   OrderNumber=x.OrderNumber
                }
                );
             return listPrev;
+        }
+
+
+        public IEnumerable<CancelOrderModel> getCancelOder(string dateSelect)
+        {
+            try
+            {
+                var data = _context.Database.SqlQuery<CancelOrderModel>("pos_getCancelOrder @dateselect",
+                     new SqlParameter("dateselect", dateSelect)
+                    ).ToList();
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+                LogPOS.WriteLog("OrderService:::::::::::::::::::::::getCancelOder()::::::::::::::::" + ex.Message);
+            }
+            return null;
+
         }
     }
 }

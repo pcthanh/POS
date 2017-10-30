@@ -317,5 +317,22 @@ namespace ServicePOS
             GC.SuppressFinalize(this);
         }
         #endregion
+
+
+        public IEnumerable<StaffModel> getStaffById(int id)
+        {
+            var data = _context.STAFFs.Where(x => x.StaffID == id && x.Status == 1)
+                .Select(x => new StaffModel
+                {
+                    StaffID = x.StaffID,
+                    Fname = x.Fname,
+                    Lname = x.Lname,
+                    UserName = x.UserName,
+                    Password = x.Password,
+                    DepartmentID = x.DepartmentID,
+                    Status = x.Status
+                });
+            return data;
+        }
     }
 }

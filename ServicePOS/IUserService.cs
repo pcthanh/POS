@@ -20,5 +20,6 @@ namespace ServicePOS
         IEnumerable<StaffModel> GetListStaff();
         int SaveDataStaff(StaffModel data);
         int RemoveStaff(int staffid, int userid);
+        IEnumerable<StaffModel> getStaffById(int id);
     }
 }

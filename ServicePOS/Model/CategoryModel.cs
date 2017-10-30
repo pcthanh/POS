@@ -20,6 +20,7 @@ namespace ServicePOS.Model
         public Nullable<int> UpdateBy { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public int CatalogueID { get; set; }
+        public Nullable<int> Position { get; set; }
 
     }
 }

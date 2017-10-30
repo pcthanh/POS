@@ -29,7 +29,7 @@ namespace ServicePOS
        int VoidItemHistory(OrderDateModel OrderVoid);
        IEnumerable<OrderDateModel> GetPrevOrder(int Page);
        IEnumerable<OrderDateModel> GetPrevOrderTotalPages();
-       OrderDateModel GetListOrderPrevOrder(string idTable, int idOrder,DateTime ts);
+       OrderDateModel GetListOrderPrevOrder(string idTable, int idOrder,string orderNum,DateTime ts);
        int CancelOrder(OrderDateModel Order);
        int LastDynID();
        StatusTable GetStatusTablePrinBill(string TableID);
@@ -37,5 +37,6 @@ namespace ServicePOS
 
        int GetOrderID();
        string GetOrderNumber();
+       IEnumerable<CancelOrderModel> getCancelOder(string timeStamp);
     }
 }

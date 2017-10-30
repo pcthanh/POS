@@ -31,6 +31,13 @@ namespace POSEZ2U
             get { return _reportService ?? (_reportService = new ReportService()); }
             set { _reportService = value; }
         }
+        private IVoidItem _voidService;
+
+        private IVoidItem VoidItemListService
+        {
+            get { return _voidService ?? (_voidService = new VoidItemList()); }
+            set { _voidService = value; }
+        }
 
         private IPrinterService _printService;
 
@@ -44,6 +51,18 @@ namespace POSEZ2U
         {
             get { return _configService ?? (_configService = new ConfigService()); }
             set { _configService = value; }
+        }
+        private IOrderService _orderService;
+        private IOrderService OrderService
+        {
+            get { return _orderService ?? (_orderService = new OrderService()); }
+            set { _orderService = value; }
+        }
+        private IUserService _userService;
+        private IUserService UserService
+        {
+            get { return _userService ?? (_userService = new UserService()); }
+            set { _userService = value; }
         }
 
         private Printer.POSPrinter posPrinter = new Printer.POSPrinter();
@@ -79,7 +98,7 @@ namespace POSEZ2U
             try
             {
                 flpReport.Controls.Clear();
-                string[] str = { "Shift report", "Daily Sale report", "Weekly report" };
+                string[] str = { "Shift report", "Daily Sale report", "Weekly report","Void Item/Cancel Order"};
                 int i = 1;
                 foreach (string strReport in str)
                 {
@@ -130,6 +149,11 @@ namespace POSEZ2U
                     pDetail.Controls.Clear();
                     flpReportList.Controls.Clear();
                     LoadReportWekky();
+                    break;
+                case 4:
+                    pDetail.Controls.Clear();
+                    flpReportList.Controls.Clear();
+                    VoidItemAngOrderCancel();
                     break;
                 default:
                     pDetail.Controls.Clear();
@@ -515,6 +539,113 @@ namespace POSEZ2U
                 ucReportItem.Click += ucWeeklyReportItem_Click;
                 flpReportList.Controls.Add(ucReportItem);
             }
+        }
+
+
+        private void VoidItemAngOrderCancel()
+        {
+            flpReportList.Controls.Clear();
+            int i = 1;
+            string[] str =
+            {
+                "Void Item", "Cancle Order"
+            };
+            foreach (string strDaily in str)
+            {
+                UCReportItem ucReportItemvVoid = new UCReportItem();
+                ucReportItemvVoid.lblTitelReportItem.Text = strDaily;
+                ucReportItemvVoid.Tag = i;
+                i++;
+                ucReportItemvVoid.Width = flpReportList.Width;
+                ucReportItemvVoid.Click += ucReportItemvVoid_Click;
+                flpReportList.Controls.Add(ucReportItemvVoid);
+            }
+        }
+
+        void ucReportItemvVoid_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UCReportItem ucReportItem = (UCReportItem)sender;
+                int tag = Convert.ToInt32(ucReportItem.Tag);
+                foreach (Control ctr in flpReportList.Controls)
+                {
+                    if (ctr.BackColor == Color.FromArgb(0, 153, 0))
+                    {
+                        ctr.BackColor = Color.FromArgb(255, 255, 255);
+                        ctr.ForeColor = Color.FromArgb(51, 51, 51);
+                    }
+                }
+                ucReportItem.BackColor = Color.FromArgb(0, 153, 0);
+                ucReportItem.ForeColor = Color.FromArgb(255, 255, 255);
+                switch (tag)
+                {
+                    case 1:
+
+                        this.pDetail.Controls.Clear();
+                        LoadVoidItemList();
+                        break;
+                    case 2:
+                        this.pDetail.Controls.Clear();
+                        LoadCancelOrder();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogPOS.WriteLog("frmReport:::::::::::::::ucReportItemvVoid_Click:::::::::::::::" + ex.Message);
+            }
+        }
+        private void LoadCancelOrder()
+        {
+            var dateselect = Convert.ToDateTime(dateSelect.Text).ToString("yyyy-MM-dd");
+            UCCancelOrderContainer ucList = new UCCancelOrderContainer();
+            ucList.Dock = DockStyle.Fill;
+            this.pDetail.Controls.Add(ucList);
+            var data = OrderService.getCancelOder(dateselect);
+            foreach (var item in data)
+            {
+                UCCancelOrderItemList ucData = new UCCancelOrderItemList();
+                var dataStaff = UserService.getStaffById(item.Staff);
+                ucData.lblStaff.Text = dataStaff.Single().UserName;
+                ucData.lblOrderId.Text = item.OrderId.ToString();
+                ucData.lblTotal.Text =money.Format2(item.Price);
+                DateTime time = Convert.ToDateTime(item.Time);
+                ucData.lblTime.Text = time.ToString("dd/MM/yyyy HH:mm:ss");
+                var dataAdmin = UserService.getStaffById(item.Admin);
+                ucData.lblAdmin.Text = dataAdmin.Single().UserName;
+                ucData.Width = ucList.Width;
+                ucData.BackColor = Color.FromArgb(221, 221, 221);
+                ucList.flpCancelOrder.Controls.Add(ucData);
+            }
+            
+        }
+        private void LoadVoidItemList()
+        {
+            var dateselect = Convert.ToDateTime(dateSelect.Text).ToString("yyyy-MM-dd");
+            DateTime dt = Convert.ToDateTime(dateselect);
+            var data = VoidItemListService.getVoidItem(dt);
+            UCListVoidItem ucList = new UCListVoidItem();
+            ucList.Dock = DockStyle.Fill;
+            this.pDetail.Controls.Add(ucList);
+            //UCVoidListItem ucData = new UCVoidListItem();
+            //ucList.flpVoidList.Controls.Add(ucData);
+            int i = 1;
+            foreach (var item in data)
+            {
+                UCVoidListItem ucData = new UCVoidListItem();
+                ucData.lblStaff.Text = item.Staff;
+                ucData.lblOrderId.Text = item.OrderId;
+                ucData.lblItemName.Text = item.ItemName;
+                ucData.lblPrice.Text =money.Format2(Convert.ToDouble(item.Price));
+                DateTime time = Convert.ToDateTime(item.Time);
+                ucData.lblTime.Text = time.ToString("dd/MM/yyyy HH:mm:ss");
+                ucData.lblAdmin.Text =item.Admin;
+                ucData.Width = ucList.Width;
+                ucList.flpVoidList.Controls.Add(ucData);
+            }
+            
+            
         }
 
         private void ucWeeklyReportItem_Click(object sender, EventArgs e)

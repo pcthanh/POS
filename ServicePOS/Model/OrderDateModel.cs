@@ -39,6 +39,7 @@ namespace ServicePOS.Model
         public int PrinterNote { get; set; }
         public int HaveNote { get; set; }
         public string UserName { get; set; }
+        public string AdminVoid { get; set; }
         public string SendOrderOrNot { get; set; }
         public List<OrderDetailModel> ListOrderDetail = new List<OrderDetailModel>();
         public List<CardModel> ListCard = new List<CardModel>();
@@ -99,13 +100,20 @@ namespace ServicePOS.Model
             Double total = 0;
             for (int i = 0; i < ListOrderDetail.Count; i++)
             {
-
-                total += Convert.ToDouble(ListOrderDetail[i].Price * ListOrderDetail[i].Qty);
+                if (ListOrderDetail[i].ChangeStatus != 2)
+                {
+                    total += Convert.ToDouble(ListOrderDetail[i].Price * ListOrderDetail[i].Qty);
+                }
+                
                 if (ListOrderDetail[i].ListOrderDetailModifire.Count > 0)
                 {
                     for (int j = 0; j < ListOrderDetail[i].ListOrderDetailModifire.Count; j++)
                     {
-                        total += Convert.ToDouble(ListOrderDetail[i].ListOrderDetailModifire[j].Price * ListOrderDetail[i].ListOrderDetailModifire[j].Qty);
+                        if (ListOrderDetail[i].ListOrderDetailModifire[j].ChangeStatus != 2)
+                        {
+                            total += Convert.ToDouble(ListOrderDetail[i].ListOrderDetailModifire[j].Price * ListOrderDetail[i].ListOrderDetailModifire[j].Qty);
+                        }
+
                     }
                 }
             }
@@ -125,7 +133,11 @@ namespace ServicePOS.Model
                     {
                         for (int j = 0; j < ListOrderDetail[i].ListOrderDetailModifire.Count; j++)
                         {
-                            total += Convert.ToDouble(ListOrderDetail[i].ListOrderDetailModifire[j].Price * ListOrderDetail[i].ListOrderDetailModifire[j].Qty);
+                            if (ListOrderDetail[i].ListOrderDetailModifire[j].ChangeStatus != 2)
+                            {
+                                total += Convert.ToDouble(ListOrderDetail[i].ListOrderDetailModifire[j].Price * ListOrderDetail[i].ListOrderDetailModifire[j].Qty);
+                            }
+                            
                         }
                     }
                 }

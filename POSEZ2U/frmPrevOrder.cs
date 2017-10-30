@@ -22,6 +22,7 @@ namespace POSEZ2U
         }
         POSEZ2U.Class.MoneyFortmat money = new Class.MoneyFortmat(POSEZ2U.Class.MoneyFortmat.AU_TYPE);
         public int OrderID;
+        public string OrderNum;
         int currenPage = 1;
         int totalPages = 0;
         int pageSize = 24;
@@ -60,6 +61,7 @@ namespace POSEZ2U
                 UCPrevOrder ucPrev = (UCPrevOrder)sender;
                 OrderDateModel Order = (OrderDateModel)ucPrev.Tag;
                 OrderID = Order.OrderID;
+                OrderNum = Order.OrderNumber;
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
             }
             catch (Exception ex)

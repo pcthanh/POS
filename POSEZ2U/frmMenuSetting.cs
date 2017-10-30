@@ -174,6 +174,7 @@ namespace POSEZ2U
             ucProduct.ForeColor = Color.FromArgb(255, 255, 255);
 
             pnDetail.Controls.Clear();
+            this.btnAdd.Enabled = true;
             switch (tag)
             {
                 case 1:

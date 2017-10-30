@@ -77,6 +77,15 @@ namespace POSEZ2U
                 cbPrinter.Tag = lst;
                 cbPrinter.DisplayMember = "PrintName";
                 cbPrinter.ValueMember = "ID";
+                for (int i = 0; i < lst.Count; i++)
+                {
+                    if(lst[i].PrintName.Contains("Kitchen"))
+                    {
+                        cbPrinter.SelectedIndex = i;
+                    }
+                }
+                
+                
             }
             catch (Exception ex)
             {
@@ -95,6 +104,7 @@ namespace POSEZ2U
             {
                 LoadPrinter();
             }
+            this.txtOpenItemPrice.Text = "0";
 
         }
     }

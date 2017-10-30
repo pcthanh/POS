@@ -17,6 +17,10 @@ using Printer;
 using POSEZ2U.Class;
 using System.Configuration;
 using System.Collections.Specialized;
+using System.Management;
+using System.Printing;
+using System.Drawing.Printing; 
+
 namespace POSEZ2U
 {
     public partial class frmOrder : Form
@@ -97,6 +101,12 @@ namespace POSEZ2U
         {
             get { return _printService ?? (_printService = new PrinterService()); }
             set { _printService = value; }
+        }
+        private IPermissionService _permissionService;
+        private IPermissionService PermissionService
+        {
+            get { return _permissionService ?? (_permissionService = new PermissionService()); }
+            set { _permissionService = value; }
         }
         List<OrderDetailModel> ListOrderDetail = new List<OrderDetailModel>();
         List<OrderDetailModifireModel> ListOrderModifire = new List<OrderDetailModifireModel>();
@@ -438,6 +448,11 @@ namespace POSEZ2U
 
         void btnOpenItemItem_Click(object sender, EventArgs e)
         {
+            if (OrderMain.Status == 1)
+            {
+                OrderCompleted();
+                return;
+            }
             frmOpenItem frm = new frmOpenItem(0);
             if (frmOpacity.ShowDialog(this, frm) == System.Windows.Forms.DialogResult.OK)
             {
@@ -1006,6 +1021,29 @@ namespace POSEZ2U
 
         private void btnVoid_Click(object sender, EventArgs e)
         {
+
+            if (OrderMain.Status == 1)
+            {
+                OrderCompleted();
+                return;
+            }
+            if (OrderMain.IsLoadFromData)
+            {
+                Form1 frmLogin = new Form1();
+                frmLogin.CheckCallform = 1;
+                if (frmLogin.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (UserVoidItem.UserLoginInfo.DepartmentID != 1 && UserVoidItem.UserLoginInfo.DepartmentID != 2)
+                    {
+                        return;
+                    }
+
+                }
+                else
+                    return;
+                
+            }
+            
             bool isStopVoid = false;
             int countChangeStatus = 0;
             try
@@ -1029,7 +1067,13 @@ namespace POSEZ2U
 
                     }
                     if (countChangeStatus == 1)
-                        isStopVoid = true;
+                    {
+                        if (OrderMain.IsLoadFromData)
+                        {
+                            isStopVoid = true;
+                        }
+                    }
+                        
                     if (!isStopVoid)
                     {
                         if (flagClick == 1)
@@ -1126,6 +1170,7 @@ namespace POSEZ2U
                             flagClick = 0;
                         }
                         lblSubtotal.Text = "$" + money.Format2(OrderMain.SubTotalVoid());
+                        OrderMain.AdminVoid = UserVoidItem.UserLoginInfo.UserName;
                         if (OrderMain.IsLoadFromData)
                             OrderService.VoidItemHistory(OrderMain);
                     }
@@ -1444,13 +1489,25 @@ namespace POSEZ2U
         {
             try
             {
+                this.ucSendOrder.Enabled = false;
+                GetListPrinter();
+                //if (!CheckMyPrinter())
+                //{
+                //    frmMessager fmrme = new frmMessager("Printer", "Please connect your printer");
+                //    if (fmrme.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                //    {
+                //        this.Enabled = true;
+                //        return;
+                //    }
+
+                //}
                 if (OrderMain.isPrevOrder == 1)
                 {
                     OrderCompleted();
                 }
                 else
                 {
-                    GetListPrinter();
+                   
                     if (OrderMain.Status == PRINTBILL)
                     {
                         OrderCompleted();
@@ -1485,11 +1542,13 @@ namespace POSEZ2U
                         }
                     }
                 }
+                this.ucSendOrder.Enabled = true;
             }
             catch (Exception ex)
             {
                 LogPOS.WriteLog("btnSendOrder_Click::::::::::::::::::::::::::::::::::::::::::" + ex.Message);
             }
+            this.Enabled = true;
         }
         private void btnSendOrder_Click(object sender, EventArgs e)
         {
@@ -1650,13 +1709,13 @@ namespace POSEZ2U
                 }
             }
         }
-        public void LoadOrderPrev(int orderID)
+        public void LoadOrderPrev(int orderID,string orderNum)
         {
             indexControl = 1;
             try
             {
                 OrderMain = new OrderDateModel();
-                OrderMain = OrderService.GetListOrderPrevOrder("", orderID, DateTime.Now.Date);
+                OrderMain = OrderService.GetListOrderPrevOrder("", orderID,orderNum, DateTime.Now.Date);
                 lblSubtotal.Text = money.Format2(Convert.ToDouble(OrderMain.TotalAmount));
                 if (OrderMain.Seat > 0)
                 {
@@ -1729,8 +1788,9 @@ namespace POSEZ2U
                 frmPrevOrder frm = new frmPrevOrder();
                 if (frmOpacity.ShowDialog(this, frm) == System.Windows.Forms.DialogResult.OK)
                 {
-                    LoadOrderPrev(frm.OrderID);
+                    LoadOrderPrev(frm.OrderID,frm.OrderNum);
                     OrderMain.isPrevOrder = 1;
+                    OrderMain.Status = 1;
                 }
             }
             catch (Exception ex)
@@ -1774,11 +1834,33 @@ namespace POSEZ2U
         {
             try
             {
+                if (OrderMain.Status == 1)
+                {
+                    OrderCompleted();
+                    return;
+                }
+                if (OrderMain.IsLoadFromData)
+                {
+                    Form1 frmLogin = new Form1();
+                    frmLogin.CheckCallform = 1;
+                    if (frmLogin.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        if (UserVoidItem.UserLoginInfo.DepartmentID != 1 && UserVoidItem.UserLoginInfo.DepartmentID != 2)
+                        {
+                            return;
+                        }
+
+                    }
+                    else
+                        return;
+
+                }
                 if (OrderMain.ListOrderDetail.Count > 0)
                 {
                     frmConfirm frm = new frmConfirm("Order", "Are You sure CANCEL ORDER???");
                     if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
+                        OrderMain.AdminVoid = Class.UserVoidItem.UserLoginInfo.StaffID.ToString();
                         int result = OrderService.CancelOrder(OrderMain);
                         if (result == 1)
                         {
@@ -1928,5 +2010,55 @@ namespace POSEZ2U
                 }
             }
         }
+        private bool checkPrinterOffline()
+        {
+            bool online = false;
+            try
+            {
+                PrintDocument printDocument = new PrintDocument();
+                printDocument.PrinterSettings.PrinterName = "Dataprint 80mm Series Printer";
+                online = printDocument.PrinterSettings.IsValid;
+            }
+            catch
+            {
+                online = false;
+            }
+            return online;
+        }
+        public bool CheckMyPrinter()//hien tai chi check 1 may in
+        {
+            bool IsReady = true;
+            try
+            {
+                ManagementObjectSearcher searcher = new
+                ManagementObjectSearcher("SELECT * FROM   Win32_Printer");
+
+                CheckYourPrinter.check();
+                string namePrinterData = "";
+                for (int i = 0; i < PrintData.Count; i++)
+                {
+                    if (PrintData[i].PrinterType == 1)
+                    {
+                        namePrinterData = PrintData[i].PrinterName;
+                        IsReady = CheckYourPrinter.CheckMyPrinter(namePrinterData);
+                        if (!IsReady)
+                        {
+                            IsReady = false;
+                            break;
+                        }
+                    }
+                }
+                //IsReady = CheckYourPrinter.CheckMyPrinter(namePrinterData);
+                LogPOS.WriteLog("CheckMyPrinter():::::::::::::::::::::" + IsReady);
+               
+            }
+            catch (Exception ex)
+            {
+                LogPOS.WriteLog("CheckMyPrinter::::::::::::::::::::" + ex.Message);
+            }
+            return IsReady;
+            
+        }
+        
     }
 }

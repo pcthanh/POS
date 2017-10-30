@@ -477,6 +477,7 @@
             this.ucVoidItem.Size = new System.Drawing.Size(78, 64);
             this.ucVoidItem.TabIndex = 2;
             this.ucVoidItem.Click += new System.EventHandler(this.btnVoid_Click);
+            
             // 
             // ucSendOrder
             // 

@@ -24,7 +24,20 @@ namespace POSEZ2U
         public frmFloor(OrderDateModel _orderMain)
         {
             InitializeComponent();
+            this.Activated += frmFloor_Activated;
+            this.VisibleChanged += frmFloor_VisibleChanged;
             orderMain = _orderMain;
+        }
+
+        void frmFloor_VisibleChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        void frmFloor_Activated(object sender, EventArgs e)
+        {
+            //this.paintFloor();
+           
         }
         public static int chk = 0;
         public frmFloor()
@@ -228,12 +241,13 @@ namespace POSEZ2U
             CheckStatusTable();
             RefeshRealTime();
             frmpro.IsStoped = true;
+           
             
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             
             
         }

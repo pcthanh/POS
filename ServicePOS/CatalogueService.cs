@@ -135,14 +135,16 @@ namespace ServicePOS
 
             var data = _context.MAP_CATEGORY_TO_CATALOGUE.Join(_context.CATEGORies, cata => cata.CategoryID,
                 cate => cate.CategoryID, (cata, cate) => new { cata, cate })
-                .Where(x => x.cata.CatalogueID == CatalogueID && x.cata.Status == 1)
+                .Where(x => x.cata.CatalogueID == CatalogueID && x.cate.Status == 1 && x.cata.Status==1)
+               
                 .Select(x => new CategoryModel()
                 {
                     CatalogueID = x.cata.CatalogueID,
                     CategoryID = x.cate.CategoryID,
                     CategoryName = x.cate.CategoryName,
-                    Status = x.cate.Status
-                });
+                    Status = x.cate.Status,
+                    Position=x.cate.Position
+                }).OrderBy(c=>c.Position);
 
             return data;
         }
@@ -152,14 +154,15 @@ namespace ServicePOS
 
             var data = _context.MAP_CATEGORY_TO_CATALOGUE.Join(_context.CATEGORies, cata => cata.CategoryID,
                 cate => cate.CategoryID, (cata, cate) => new { cata, cate })
-                .Where(x => x.cata.CatalogueID == CatalogueID && x.cata.Status == 1)
+                .Where(x => x.cata.CatalogueID == CatalogueID && x.cate.Status == 1)
                 .Select(x => new CategoryModel()
                 {
                     CatalogueID = x.cata.CatalogueID,
                     CategoryID = x.cate.CategoryID,
                     CategoryName = x.cate.CategoryName,
-                    Status = x.cate.Status
-                }).OrderBy(p => p.CategoryName).Skip(10 * (currentPage - 1))
+                    Status = x.cate.Status,
+                    Position=x.cate.Position
+                }).OrderBy(p => p.Position).Skip(10 * (currentPage - 1))
                 .Take(10).ToList();
             return data;
         }
@@ -464,6 +467,16 @@ namespace ServicePOS
             GC.SuppressFinalize(this);
         }
         #endregion
+
+
+        public int UpdatePostionCategory(CategoryModel cate)
+        {
+            int resut = 0;
+            string sql = "UPDATE CATEGORY SET Position='" + cate.Position + "' WHERE CategoryID='" + cate.CategoryID + "'";
+            resut = _context.Database.ExecuteSqlCommand(sql);
+            return resut;
+            
+        }
     }
 }
 

@@ -30,6 +30,7 @@
 ﻿        private void InitializeComponent()
 ﻿        {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSearch = new POSEZ2U.UC.UCTextBoxKeyBoard();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,7 +47,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.flpThisgroupitems = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtSearch = new POSEZ2U.UC.UCTextBoxKeyBoard();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,6 +66,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(528, 38);
             this.panel1.TabIndex = 0;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtSearch.Location = new System.Drawing.Point(81, 5);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(147, 26);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label2
             // 
@@ -87,6 +99,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnDown);
+            this.panel2.Controls.Add(this.btnUp);
             this.panel2.Controls.Add(this.btnOk);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -247,15 +261,33 @@
             this.flpThisgroupitems.Size = new System.Drawing.Size(227, 393);
             this.flpThisgroupitems.TabIndex = 0;
             // 
-            // txtSearch
+            // btnUp
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtSearch.Location = new System.Drawing.Point(81, 5);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(147, 26);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.btnUp.BackColor = System.Drawing.SystemColors.Control;
+            this.btnUp.FlatAppearance.BorderSize = 0;
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUp.Location = new System.Drawing.Point(238, 6);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(75, 41);
+            this.btnUp.TabIndex = 1;
+            this.btnUp.Text = "▲";
+            this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDown.FlatAppearance.BorderSize = 0;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDown.Location = new System.Drawing.Point(320, 6);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(75, 41);
+            this.btnDown.TabIndex = 1;
+            this.btnDown.Text = "▼";
+            this.btnDown.UseVisualStyleBackColor = false;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // frmMenuAdd
             // 
@@ -305,5 +337,7 @@
 ﻿        public System.Windows.Forms.Button btnRight;
 ﻿        public System.Windows.Forms.Button btnLeft;
          private UC.UCTextBoxKeyBoard txtSearch;
+         private System.Windows.Forms.Button btnUp;
+         private System.Windows.Forms.Button btnDown;
 ﻿    }
 ﻿}
